@@ -9,7 +9,6 @@
 import UIKit
 import CoreLocation
 
-
 class HomePageViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var current_rate_title: UILabel!
@@ -19,6 +18,7 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var temperature: UILabel!
     @IBOutlet weak var weathericon: UIImageView!
     
+    @IBOutlet weak var LocationLabel: UIBarButtonItem!
     
     
     let locationManger:CLLocationManager = CLLocationManager()
@@ -27,34 +27,59 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //定位功能初始化
         locationManger.delegate = self
         locationManger.desiredAccuracy = kCLLocationAccuracyBest
-        
-        if ios8() {
-            locationManger.requestAlwaysAuthorization()
-        }
-        
+        locationManger.requestAlwaysAuthorization()
         locationManger.startUpdatingLocation()
+        
+        //更新汇率
         updateExchangeRate()
     }
     
+    
+    // MARK: Localize
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        
+        //地址反编码
+        CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: { (placemarks, error) -> Void in
+   
+            if (error != nil) {
+                println("Reverse geocoder failed with error:" + error.localizedDescription)
+                return
+            }
+            
+            if placemarks.count > 0 {
+                self.locationManger.stopUpdatingLocation()
+                let pm = placemarks[0] as CLPlacemark
+                self.displayLocationInfo(pm)
+            }else {
+                println("Error with data")
+            }
+        })
+        
         var location:CLLocation = locations[locations.count-1] as CLLocation
         if location.horizontalAccuracy > 0 {
             println(location.coordinate.latitude)
             println(location.coordinate.longitude)
-            updateWeatherInfo(location.coordinate.latitude, longtitude: location.coordinate.longitude)
+            //updateWeatherInfo(location.coordinate.latitude, longtitude: location.coordinate.longitude)
             locationManger.stopUpdatingLocation()
         }
+        
     }
     
+    func displayLocationInfo(placemark: CLPlacemark) {
+        
+        self.locationManger.stopUpdatingLocation()
+        self.LocationLabel.title = placemark.locality
+        println(placemark.locality)
+        println(placemark.postalCode)
+        println(placemark.administrativeArea)
+        println(placemark.country)
+    }
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        println(error)
-    }
-    
-    func ios8() -> Bool{
-        return UIDevice.currentDevice().systemVersion == "8.0"
+        println("Error while updating location" + error.localizedDescription)
     }
     
     // MARK: Exchange Rate
@@ -192,4 +217,5 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
     }
+    
 }

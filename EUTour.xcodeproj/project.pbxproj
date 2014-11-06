@@ -25,6 +25,7 @@
 		39D9B966199CD1B3004C89CA /* CityInforTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D9B965199CD1B3004C89CA /* CityInforTableViewController.swift */; };
 		39E2333C1999A2B500E57B15 /* MeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E2333B1999A2B500E57B15 /* MeTableViewController.swift */; };
 		39E2333E1999AA4B00E57B15 /* PostMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E2333D1999AA4B00E57B15 /* PostMenuTableViewController.swift */; };
+		39E3C2E81A0B644100106675 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E3C2E71A0B644100106675 /* CoreLocation.framework */; };
 		39F931D819A57E73003BD154 /* FirstSegmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F931D719A57E73003BD154 /* FirstSegmentTableViewController.swift */; };
 		39F931DA19A57E82003BD154 /* SecondSegmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F931D919A57E82003BD154 /* SecondSegmentTableViewController.swift */; };
 		39FB7D08199B28C30023B969 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FB7D07199B28C30023B969 /* SignUpViewController.swift */; };
@@ -106,6 +107,7 @@
 		39D9B965199CD1B3004C89CA /* CityInforTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityInforTableViewController.swift; sourceTree = "<group>"; };
 		39E2333B1999A2B500E57B15 /* MeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeTableViewController.swift; sourceTree = "<group>"; };
 		39E2333D1999AA4B00E57B15 /* PostMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostMenuTableViewController.swift; sourceTree = "<group>"; };
+		39E3C2E71A0B644100106675 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		39F931D719A57E73003BD154 /* FirstSegmentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstSegmentTableViewController.swift; sourceTree = "<group>"; };
 		39F931D919A57E82003BD154 /* SecondSegmentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondSegmentTableViewController.swift; sourceTree = "<group>"; };
 		39FB7D07199B28C30023B969 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E3C2E81A0B644100106675 /* CoreLocation.framework in Frameworks */,
 				390944961998EE1D00A61C3F /* MapKit.framework in Frameworks */,
 				390944851998D05A00A61C3F /* IBDesignable.framework in Frameworks */,
 				B727366FE8DF4DC5A5AAE231 /* libPods.a in Frameworks */,
@@ -188,6 +191,10 @@
 			children = (
 				397BEAB5199E951D00E1A7E6 /* Weather-Bridging-Header.h */,
 				390944931998ED2400A61C3F /* HomePageViewController.swift */,
+				39E3C2EC1A0B68A900106675 /* rent info */,
+				39DC3F6D19A21DEE00D27CA1 /* news */,
+				390944971998EFD200A61C3F /* cityinfo */,
+				39E3C2EB1A0B684600106675 /* union of universities */,
 			);
 			name = homepage;
 			sourceTree = "<group>";
@@ -240,10 +247,10 @@
 				399DD6B31998367100D14BD3 /* ViewController.swift */,
 				399DD6B51998367100D14BD3 /* Main.storyboard */,
 				390944921998ED0200A61C3F /* homepage */,
-				39DC3F6D19A21DEE00D27CA1 /* news */,
-				390944971998EFD200A61C3F /* cityinfo */,
+				39E3C2E91A0B67B100106675 /* nearby info */,
 				3909449A1999012C00A61C3F /* post */,
-				39C4CF9C19997E0700BD53A7 /* me */,
+				39E3C2EA1A0B681000106675 /* message */,
+				39C4CF9C19997E0700BD53A7 /* profile */,
 				399DD6AF1998367100D14BD3 /* Supporting Files */,
 			);
 			path = EUTour;
@@ -277,14 +284,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		39C4CF9C19997E0700BD53A7 /* me */ = {
+		39C4CF9C19997E0700BD53A7 /* profile */ = {
 			isa = PBXGroup;
 			children = (
 				39E2333B1999A2B500E57B15 /* MeTableViewController.swift */,
 				39FB7D07199B28C30023B969 /* SignUpViewController.swift */,
 				39FB7D09199B3C540023B969 /* SettingTableViewController.swift */,
 			);
-			name = me;
+			name = profile;
 			sourceTree = "<group>";
 		};
 		39DC3F6D19A21DEE00D27CA1 /* news */ = {
@@ -295,6 +302,34 @@
 				39F931D919A57E82003BD154 /* SecondSegmentTableViewController.swift */,
 			);
 			name = news;
+			sourceTree = "<group>";
+		};
+		39E3C2E91A0B67B100106675 /* nearby info */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "nearby info";
+			sourceTree = "<group>";
+		};
+		39E3C2EA1A0B681000106675 /* message */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = message;
+			sourceTree = "<group>";
+		};
+		39E3C2EB1A0B684600106675 /* union of universities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "union of universities";
+			sourceTree = "<group>";
+		};
+		39E3C2EC1A0B68A900106675 /* rent info */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "rent info";
 			sourceTree = "<group>";
 		};
 		4EFE152BB532F025E52865B9 /* Pods */ = {
@@ -309,6 +344,7 @@
 		CD67F2C6538C430BA3045F58 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				39E3C2E71A0B644100106675 /* CoreLocation.framework */,
 				390944951998EE1D00A61C3F /* MapKit.framework */,
 				D4D88B96B7A24B90B537FC56 /* libPods.a */,
 			);
@@ -423,6 +459,7 @@
 					};
 					399DD6AB1998367100D14BD3 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = VXX7484L47;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
