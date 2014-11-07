@@ -20,6 +20,8 @@
 		399DD6B41998367100D14BD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399DD6B31998367100D14BD3 /* ViewController.swift */; };
 		399DD6B71998367100D14BD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 399DD6B51998367100D14BD3 /* Main.storyboard */; };
 		399DD6C51998367100D14BD3 /* EUTourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399DD6C41998367100D14BD3 /* EUTourTests.swift */; };
+		39BDA5041A0D1A7A009BA60F /* CityInfoSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BDA5031A0D1A7A009BA60F /* CityInfoSearchResultsViewController.swift */; };
+		39BDA5061A0D1AC7009BA60F /* CityInfoSearchShowResultsInSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BDA5051A0D1AC7009BA60F /* CityInfoSearchShowResultsInSourceViewController.swift */; };
 		39C4CF9B19993E8D00BD53A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39C4CF9A19993E8D00BD53A7 /* Images.xcassets */; };
 		39D4206419AF667500F9D54E /* TQMultistageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D4206319AF667500F9D54E /* TQMultistageTableView.m */; };
 		39D9B966199CD1B3004C89CA /* CityInforTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D9B965199CD1B3004C89CA /* CityInforTableViewController.swift */; };
@@ -101,6 +103,8 @@
 		399DD6BE1998367100D14BD3 /* EUTourTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EUTourTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		399DD6C31998367100D14BD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		399DD6C41998367100D14BD3 /* EUTourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EUTourTests.swift; sourceTree = "<group>"; };
+		39BDA5031A0D1A7A009BA60F /* CityInfoSearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityInfoSearchResultsViewController.swift; sourceTree = "<group>"; };
+		39BDA5051A0D1AC7009BA60F /* CityInfoSearchShowResultsInSourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityInfoSearchShowResultsInSourceViewController.swift; sourceTree = "<group>"; };
 		39C4CF9A19993E8D00BD53A7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		39D4206219AF667500F9D54E /* TQMultistageTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMultistageTableView.h; sourceTree = "<group>"; };
 		39D4206319AF667500F9D54E /* TQMultistageTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMultistageTableView.m; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 			children = (
 				390944981998EFFC00A61C3F /* CityInfoViewController.swift */,
 				39D9B965199CD1B3004C89CA /* CityInforTableViewController.swift */,
+				39BDA5031A0D1A7A009BA60F /* CityInfoSearchResultsViewController.swift */,
+				39BDA5051A0D1AC7009BA60F /* CityInfoSearchShowResultsInSourceViewController.swift */,
 			);
 			name = cityinfo;
 			sourceTree = "<group>";
@@ -586,12 +592,14 @@
 				39F931D819A57E73003BD154 /* FirstSegmentTableViewController.swift in Sources */,
 				399DD6B41998367100D14BD3 /* ViewController.swift in Sources */,
 				39FB7D08199B28C30023B969 /* SignUpViewController.swift in Sources */,
+				39BDA5061A0D1AC7009BA60F /* CityInfoSearchShowResultsInSourceViewController.swift in Sources */,
 				39E2333C1999A2B500E57B15 /* MeTableViewController.swift in Sources */,
 				39E2333E1999AA4B00E57B15 /* PostMenuTableViewController.swift in Sources */,
 				39D4206419AF667500F9D54E /* TQMultistageTableView.m in Sources */,
 				399DD6B21998367100D14BD3 /* AppDelegate.swift in Sources */,
 				390944941998ED2400A61C3F /* HomePageViewController.swift in Sources */,
 				390944991998EFFC00A61C3F /* CityInfoViewController.swift in Sources */,
+				39BDA5041A0D1A7A009BA60F /* CityInfoSearchResultsViewController.swift in Sources */,
 				39F931DA19A57E82003BD154 /* SecondSegmentTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
