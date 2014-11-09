@@ -12,20 +12,17 @@ class CityInfoViewController: UIViewController {
 
     @IBOutlet weak var opendate: UILabel!
     @IBOutlet weak var opentime: UILabel!
-    
     @IBOutlet weak var address: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         self.navigationItem.title = "外国人管理局"
         
         opendate.text = "Mo,Di,Mi\nDo\nFr"
         opentime.text = "08:30 - 13:00\n13:00 - 18:00\n08:30 - 12:00"
-        
         address.text = "Eberhardstrasse 39\n70173 Stuttgart"
-        
+        println("cityinfoview")
         // Do any additional setup after loading the view.
     }
 

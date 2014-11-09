@@ -45,7 +45,7 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
         CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: { (placemarks, error) -> Void in
    
             if (error != nil) {
-                println("Reverse geocoder failed with error:" + error.localizedDescription)
+                //println("Reverse geocoder failed with error:" + error.localizedDescription)
                 return
             }
             
@@ -54,14 +54,14 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
                 let pm = placemarks[0] as CLPlacemark
                 self.displayLocationInfo(pm)
             }else {
-                println("Error with data")
+                //println("Error with data")
             }
         })
         
         var location:CLLocation = locations[locations.count-1] as CLLocation
         if location.horizontalAccuracy > 0 {
-            println(location.coordinate.latitude)
-            println(location.coordinate.longitude)
+            //println(location.coordinate.latitude)
+            //println(location.coordinate.longitude)
             //updateWeatherInfo(location.coordinate.latitude, longtitude: location.coordinate.longitude)
             locationManger.stopUpdatingLocation()
         }
@@ -72,14 +72,14 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
         
         self.locationManger.stopUpdatingLocation()
         self.LocationLabel.title = placemark.locality
-        println(placemark.locality)
-        println(placemark.postalCode)
-        println(placemark.administrativeArea)
-        println(placemark.country)
+        //println(placemark.locality)
+        //println(placemark.postalCode)
+        //println(placemark.administrativeArea)
+        //println(placemark.country)
     }
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        println("Error while updating location" + error.localizedDescription)
+        //println("Error while updating location" + error.localizedDescription)
     }
     
     // MARK: Exchange Rate
@@ -90,7 +90,8 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
         
         manager.GET(url, parameters: nil,
             success: {
-                (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in println("JSON: " + responseObject.description!)
+                (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                //println("JSON: " + responseObject.description!)
                 self.updateExchangeRateSuccess(responseObject as NSDictionary)
             }, failure: {
                 (operation: AFHTTPRequestOperation!, error: NSError!) in println("ERROR: " + error.localizedDescription)

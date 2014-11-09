@@ -47,13 +47,13 @@
 
 @protocol TQTableViewDataSource <NSObject>
 
-@required
+@optional
 
 - (NSInteger)mTableView:(TQMultistageTableView *)tableView numberOfRowsInSection:(NSInteger)section;
 
 - (UITableViewCell *)mTableView:(TQMultistageTableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 
-@optional
+
 - (NSInteger)numberOfSectionsInTableView:(TQMultistageTableView *)tableView;
 
 - (UIView *)mTableView:(TQMultistageTableView *)tableView openCellForRowAtIndexPath:(NSIndexPath *)indexPath;

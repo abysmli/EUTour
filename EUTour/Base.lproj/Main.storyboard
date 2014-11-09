@@ -450,7 +450,7 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="oPH-SW-wCE" kind="push" id="E9B-eN-iiS"/>
+                                                    <segue destination="ERj-8a-CTt" kind="push" id="shn-sL-83k"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="城市信息" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LkZ-iS-7Dk">
@@ -586,9 +586,6 @@
                                     </view>
                                     <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kre-1J-Jgu">
                                         <rect key="frame" x="20" y="247" width="288" height="257"/>
-                                        <connections>
-                                            <segue destination="cr2-Lp-rcq" kind="embed" id="QTL-ni-nZ7"/>
-                                        </connections>
                                     </containerView>
                                 </subviews>
                                 <constraints>
@@ -617,46 +614,26 @@
             </objects>
             <point key="canvasLocation" x="-1226" y="744"/>
         </scene>
-        <!--City Info Search Show Results In Source View Controller-->
-        <scene sceneID="rnQ-Zu-Gok">
+        <!--City Info Table View Controller-->
+        <scene sceneID="5Rs-dj-dbn">
             <objects>
-                <tableViewController id="oPH-SW-wCE" customClass="CityInfoSearchShowResultsInSourceViewController" customModule="EUTour" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="22" sectionFooterHeight="22" id="iuF-8O-zcU">
+                <viewController id="ERj-8a-CTt" customClass="CityInfoTableViewController" customModule="EUTour" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4bP-zp-lv3"/>
+                        <viewControllerLayoutGuide type="bottom" id="ftf-hQ-Eh4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MNS-11-63r">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="menu" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="menu" textLabel="bDE-1V-ifa" detailTextLabel="0nO-ky-5t0" rowHeight="81" style="IBUITableViewCellStyleSubtitle" id="Qqi-d1-K2u">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qqi-d1-K2u" id="Dw9-AY-mEE">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="chinese title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bDE-1V-ifa">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="deutsche title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" id="0nO-ky-5t0">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="oPH-SW-wCE" id="aEv-WZ-G2T"/>
-                            <outlet property="delegate" destination="oPH-SW-wCE" id="ePA-wr-61d"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="1WE-M3-oMS"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="N1w-2j-bkR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LgX-8S-VAM">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="1nw-dp-fRQ"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZrE-wy-zZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-973" y="1887"/>
+            <point key="canvasLocation" x="-991" y="1863"/>
         </scene>
         <!--时事资讯-->
         <scene sceneID="Ofv-kE-gp7">
@@ -702,7 +679,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ae4-Be-9UH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1376" y="1887"/>
+            <point key="canvasLocation" x="-1397" y="1863"/>
         </scene>
         <!--First Segment Table View Controller-->
         <scene sceneID="YfM-V2-Df1">
@@ -755,33 +732,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lYL-ps-QCO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-79" y="1638"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="8dA-uW-OB2">
-            <objects>
-                <tableViewController id="cr2-Lp-rcq" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="QFl-ZN-WkX">
-                        <rect key="frame" x="0.0" y="0.0" width="288" height="257"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gpn-9G-nD6">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gpn-9G-nD6" id="xXB-dk-0Wa">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <sections/>
-                        <connections>
-                            <outlet property="dataSource" destination="cr2-Lp-rcq" id="r3U-m5-eWe"/>
-                            <outlet property="delegate" destination="cr2-Lp-rcq" id="EVt-Iq-szg"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="m1E-H1-a6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1226" y="1300.5"/>
         </scene>
         <!--City Info View Controller-->
         <scene sceneID="FPi-Y6-6Y0">

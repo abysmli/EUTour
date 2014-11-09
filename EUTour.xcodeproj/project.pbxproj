@@ -24,7 +24,7 @@
 		39BDA5061A0D1AC7009BA60F /* CityInfoSearchShowResultsInSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BDA5051A0D1AC7009BA60F /* CityInfoSearchShowResultsInSourceViewController.swift */; };
 		39C4CF9B19993E8D00BD53A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39C4CF9A19993E8D00BD53A7 /* Images.xcassets */; };
 		39D4206419AF667500F9D54E /* TQMultistageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D4206319AF667500F9D54E /* TQMultistageTableView.m */; };
-		39D9B966199CD1B3004C89CA /* CityInforTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D9B965199CD1B3004C89CA /* CityInforTableViewController.swift */; };
+		39D9B966199CD1B3004C89CA /* CityInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D9B965199CD1B3004C89CA /* CityInfoTableViewController.swift */; };
 		39E2333C1999A2B500E57B15 /* MeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E2333B1999A2B500E57B15 /* MeTableViewController.swift */; };
 		39E2333E1999AA4B00E57B15 /* PostMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E2333D1999AA4B00E57B15 /* PostMenuTableViewController.swift */; };
 		39E3C2E81A0B644100106675 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E3C2E71A0B644100106675 /* CoreLocation.framework */; };
@@ -108,7 +108,7 @@
 		39C4CF9A19993E8D00BD53A7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		39D4206219AF667500F9D54E /* TQMultistageTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TQMultistageTableView.h; sourceTree = "<group>"; };
 		39D4206319AF667500F9D54E /* TQMultistageTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TQMultistageTableView.m; sourceTree = "<group>"; };
-		39D9B965199CD1B3004C89CA /* CityInforTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityInforTableViewController.swift; sourceTree = "<group>"; };
+		39D9B965199CD1B3004C89CA /* CityInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityInfoTableViewController.swift; sourceTree = "<group>"; };
 		39E2333B1999A2B500E57B15 /* MeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeTableViewController.swift; sourceTree = "<group>"; };
 		39E2333D1999AA4B00E57B15 /* PostMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostMenuTableViewController.swift; sourceTree = "<group>"; };
 		39E3C2E71A0B644100106675 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -207,7 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				390944981998EFFC00A61C3F /* CityInfoViewController.swift */,
-				39D9B965199CD1B3004C89CA /* CityInforTableViewController.swift */,
+				39D9B965199CD1B3004C89CA /* CityInfoTableViewController.swift */,
 				39BDA5031A0D1A7A009BA60F /* CityInfoSearchResultsViewController.swift */,
 				39BDA5051A0D1AC7009BA60F /* CityInfoSearchShowResultsInSourceViewController.swift */,
 			);
@@ -465,7 +465,7 @@
 					};
 					399DD6AB1998367100D14BD3 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = VXX7484L47;
+						DevelopmentTeam = 4YMW3G2T54;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -586,7 +586,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39D9B966199CD1B3004C89CA /* CityInforTableViewController.swift in Sources */,
+				39D9B966199CD1B3004C89CA /* CityInfoTableViewController.swift in Sources */,
 				39FB7D0A199B3C540023B969 /* SettingTableViewController.swift in Sources */,
 				3909F38C19A3DBC2008A43E9 /* NewsViewController.swift in Sources */,
 				39F931D819A57E73003BD154 /* FirstSegmentTableViewController.swift in Sources */,
