@@ -94,7 +94,7 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
                 //println("JSON: " + responseObject.description!)
                 self.updateExchangeRateSuccess(responseObject as NSDictionary)
             }, failure: {
-                (operation: AFHTTPRequestOperation!, error: NSError!) in println("ERROR: " + error.localizedDescription)
+                (operation: AFHTTPRequestOperation!, error: NSError!) in println("ExchangeRate Network ERROR: " + error.localizedDescription)
         })
     }
     
@@ -120,7 +120,7 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
             (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in println("JSON: " + responseObject.description!)
                 self.updateUISuccess(responseObject as NSDictionary)
             }, failure: {
-                (operation: AFHTTPRequestOperation!, error: NSError!) in println("ERROR: " + error.localizedDescription)
+                (operation: AFHTTPRequestOperation!, error: NSError!) in println("Weather Info Network ERROR: " + error.localizedDescription)
         })
     }
     

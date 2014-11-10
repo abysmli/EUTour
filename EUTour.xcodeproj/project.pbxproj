@@ -24,7 +24,6 @@
 		39BDA5061A0D1AC7009BA60F /* CityInfoSearchShowResultsInSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BDA5051A0D1AC7009BA60F /* CityInfoSearchShowResultsInSourceViewController.swift */; };
 		39C4CF9B19993E8D00BD53A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39C4CF9A19993E8D00BD53A7 /* Images.xcassets */; };
 		39D4206419AF667500F9D54E /* TQMultistageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D4206319AF667500F9D54E /* TQMultistageTableView.m */; };
-		39D9B966199CD1B3004C89CA /* CityInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D9B965199CD1B3004C89CA /* CityInfoTableViewController.swift */; };
 		39E2333C1999A2B500E57B15 /* MeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E2333B1999A2B500E57B15 /* MeTableViewController.swift */; };
 		39E2333E1999AA4B00E57B15 /* PostMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E2333D1999AA4B00E57B15 /* PostMenuTableViewController.swift */; };
 		39E3C2E81A0B644100106675 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E3C2E71A0B644100106675 /* CoreLocation.framework */; };
@@ -33,6 +32,7 @@
 		39FB7D08199B28C30023B969 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FB7D07199B28C30023B969 /* SignUpViewController.swift */; };
 		39FB7D0A199B3C540023B969 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FB7D09199B3C540023B969 /* SettingTableViewController.swift */; };
 		B727366FE8DF4DC5A5AAE231 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D88B96B7A24B90B537FC56 /* libPods.a */; };
+		BCBD33941A1000EB0082075D /* CityInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D9B965199CD1B3004C89CA /* CityInfoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -586,10 +586,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39D9B966199CD1B3004C89CA /* CityInfoTableViewController.swift in Sources */,
 				39FB7D0A199B3C540023B969 /* SettingTableViewController.swift in Sources */,
 				3909F38C19A3DBC2008A43E9 /* NewsViewController.swift in Sources */,
 				39F931D819A57E73003BD154 /* FirstSegmentTableViewController.swift in Sources */,
+				BCBD33941A1000EB0082075D /* CityInfoTableViewController.swift in Sources */,
 				399DD6B41998367100D14BD3 /* ViewController.swift in Sources */,
 				39FB7D08199B28C30023B969 /* SignUpViewController.swift in Sources */,
 				39BDA5061A0D1AC7009BA60F /* CityInfoSearchShowResultsInSourceViewController.swift in Sources */,
