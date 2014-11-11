@@ -461,11 +461,12 @@
 					};
 					3909447A1998D05A00A61C3F = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = VXX7484L47;
 						TestTargetID = 399DD6AB1998367100D14BD3;
 					};
 					399DD6AB1998367100D14BD3 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = 4YMW3G2T54;
+						DevelopmentTeam = VXX7484L47;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -474,6 +475,7 @@
 					};
 					399DD6BD1998367100D14BD3 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = VXX7484L47;
 						TestTargetID = 399DD6AB1998367100D14BD3;
 					};
 				};
@@ -810,10 +812,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = EUTour/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "EUTour/Weather-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s";
@@ -827,10 +831,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = EUTour/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "EUTour/Weather-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s";
