@@ -103,6 +103,11 @@ static const CGFloat kDefultHeightForAtom   = 44.0f;
     [self.tableView reloadData];
 }
 
+- (void)tableHeaderView:(UIView *)headView
+{
+    self.tableView.tableHeaderView = headView;
+}
+
 #pragma mark - Private Methods
 
 /**

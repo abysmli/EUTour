@@ -8,18 +8,18 @@
 
 import UIKit
 
-class CityInfoSearchShowResultsInSourceViewController/*: CityInfoSearchResultsViewController */{
+class CityInfoSearchShowResultsInSourceViewController: CityInfoSearchResultsViewController {
 
     // MARK: Properties
     
     // `searchController` is set in viewDidLoad(_:).
-    //var searchController: UISearchController!
+    var searchController: UISearchController!
     
     // MARK: View Life Cycle
-    /*
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
+        
         // Create the search controller, but we'll make sure that this SearchShowResultsInSourceViewController
         // performs the results updating.
         searchController = UISearchController(searchResultsController: nil)
@@ -30,9 +30,9 @@ class CityInfoSearchShowResultsInSourceViewController/*: CityInfoSearchResultsVi
         searchController.searchBar.sizeToFit()
         
         // Include the search controller's search bar within the table's header view.
-        //tableView.tableHeaderView = searchController.searchBar
+        mTableView?.tableHeaderView(searchController.searchBar) //= searchController.searchBar
         
-        definesPresentationContext = true*/
-    }*/
+        definesPresentationContext = true
+    }
 
 }

@@ -34,8 +34,9 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
         self.mTableView!.dataSource = self
         self.view.addSubview(self.mTableView!)
         self.navigationItem.title = "城市信息"
+
         // Do any additional setup after loading the view.
-    }  
+    }
     
     func listGenerator(originlist: NSArray) -> NSMutableArray {
         var flag:Bool = false
