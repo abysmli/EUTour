@@ -16,6 +16,7 @@
 		390944961998EE1D00A61C3F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 390944951998EE1D00A61C3F /* MapKit.framework */; };
 		390944991998EFFC00A61C3F /* CityInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390944981998EFFC00A61C3F /* CityInfoViewController.swift */; };
 		3909F38C19A3DBC2008A43E9 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3909F38B19A3DBC2008A43E9 /* NewsViewController.swift */; };
+		397EF7BA1A14CEEE00486543 /* UniversitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397EF7B91A14CEEE00486543 /* UniversitiesTableViewController.swift */; };
 		399DD6B21998367100D14BD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399DD6B11998367100D14BD3 /* AppDelegate.swift */; };
 		399DD6B41998367100D14BD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399DD6B31998367100D14BD3 /* ViewController.swift */; };
 		399DD6B71998367100D14BD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 399DD6B51998367100D14BD3 /* Main.storyboard */; };
@@ -95,6 +96,7 @@
 		390944981998EFFC00A61C3F /* CityInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityInfoViewController.swift; sourceTree = "<group>"; };
 		3909F38B19A3DBC2008A43E9 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		397BEAB5199E951D00E1A7E6 /* Weather-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weather-Bridging-Header.h"; sourceTree = "<group>"; };
+		397EF7B91A14CEEE00486543 /* UniversitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesTableViewController.swift; sourceTree = "<group>"; };
 		399DD6AC1998367100D14BD3 /* EUTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EUTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		399DD6B01998367100D14BD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		399DD6B11998367100D14BD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 		39E3C2EB1A0B684600106675 /* union of universities */ = {
 			isa = PBXGroup;
 			children = (
+				397EF7B91A14CEEE00486543 /* UniversitiesTableViewController.swift */,
 			);
 			name = "union of universities";
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39FB7D0A199B3C540023B969 /* SettingTableViewController.swift in Sources */,
+				397EF7BA1A14CEEE00486543 /* UniversitiesTableViewController.swift in Sources */,
 				3909F38C19A3DBC2008A43E9 /* NewsViewController.swift in Sources */,
 				39F931D819A57E73003BD154 /* FirstSegmentTableViewController.swift in Sources */,
 				BCBD33941A1000EB0082075D /* CityInfoTableViewController.swift in Sources */,
