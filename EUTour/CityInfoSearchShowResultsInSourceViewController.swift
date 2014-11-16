@@ -30,7 +30,7 @@ class CityInfoSearchShowResultsInSourceViewController: CityInfoSearchResultsView
         searchController.searchBar.sizeToFit()
         
         // Include the search controller's search bar within the table's header view.
-        mTableView?.tableHeaderView(searchController.searchBar) //= searchController.searchBar
+        //mTableView?.tableHeaderView(searchController.searchBar) //= searchController.searchBar
         
         definesPresentationContext = true
     }

@@ -92,11 +92,6 @@
  */
 - (void)reloadData;
 
-/**
- *
- */
--(void)tableHeaderView:(UIView *)headView;
-
 @end
 
 /**
