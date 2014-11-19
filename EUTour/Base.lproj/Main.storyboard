@@ -685,7 +685,7 @@
         <!--CityInfo-->
         <scene sceneID="nuW-oi-yOT">
             <objects>
-                <viewController storyboardIdentifier="CityInfoDetailsView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mh5-d7-PRE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CityInfoDetailsView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mh5-d7-PRE" customClass="CityInfoViewController" customModule="EUTour" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pp7-6f-EEJ"/>
                         <viewControllerLayoutGuide type="bottom" id="ddE-dP-hcm"/>
@@ -726,7 +726,7 @@
                                                                     <constraint firstAttribute="height" constant="30" id="Zib-mh-U4y"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="phone number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewu-6Y-3BI">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="phone number" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewu-6Y-3BI">
                                                                 <rect key="frame" x="46" y="7" width="88" height="16"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -921,7 +921,7 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9XW-MC-epP">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9XW-MC-epP">
                                                 <rect key="frame" x="82" y="17" width="48" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -947,13 +947,13 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="weekly" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoS-2i-DRD">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="weekly" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoS-2i-DRD">
                                                 <rect key="frame" x="82" y="8" width="42" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFM-an-JGF">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFM-an-JGF">
                                                 <rect key="frame" x="132" y="9" width="26" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1010,14 +1010,27 @@
                             <constraint firstItem="Pu1-Ab-hxf" firstAttribute="top" secondItem="Pp7-6f-EEJ" secondAttribute="bottom" constant="44" id="xw4-KY-dtD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="CityInfo" id="cfI-fY-ePP"/>
+                    <navigationItem key="navigationItem" title="CityInfo" id="cfI-fY-ePP">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="OGv-J1-xBC"/>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="600"/>
+                    <connections>
+                        <outlet property="address" destination="9XW-MC-epP" id="ZgF-kP-1Yt"/>
+                        <outlet property="email" destination="MKb-jq-Ih1" id="n5N-PO-oJN"/>
+                        <outlet property="mapview" destination="lZ1-Gk-Zyb" id="yLw-Xd-2rx"/>
+                        <outlet property="opendate" destination="xoS-2i-DRD" id="Lcl-NG-1A1"/>
+                        <outlet property="opentime" destination="lFM-an-JGF" id="ZGD-s1-wDH"/>
+                        <outlet property="phonenumber" destination="Ewu-6Y-3BI" id="AT1-pS-tdr"/>
+                        <outlet property="sbahn" destination="K4e-Cq-sKk" id="Cur-XP-zNB"/>
+                        <outlet property="ubahn" destination="CTH-Rv-xi8" id="fFE-vk-7Ax"/>
+                        <outlet property="website" destination="tCr-iv-ibE" id="Bfc-Ju-Y9f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yL-zb-SzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1260" y="2424"/>
+            <point key="canvasLocation" x="-1248" y="2412"/>
         </scene>
         <!--时事资讯-->
         <scene sceneID="Ofv-kE-gp7">
@@ -1068,13 +1081,13 @@
         <!--First Segment Table View Controller-->
         <scene sceneID="YfM-V2-Df1">
             <objects>
-                <tableViewController storyboardIdentifier="NewsPage" id="2b7-7H-tvq" customClass="FirstSegmentTableViewController" customModule="EUTour" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="newsTableView" id="2b7-7H-tvq" customClass="FirstSegmentTableViewController" customModule="EUTour" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="83" sectionHeaderHeight="22" sectionFooterHeight="22" id="R8R-ac-rS6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="test" rowHeight="80" id="dm3-IO-aLm">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="newsTableView" rowHeight="80" id="dm3-IO-aLm" userLabel="newsTableView" customClass="newsTableCellView" customModule="EUTour">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dm3-IO-aLm" id="NJr-at-q7k">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -1146,6 +1159,13 @@
                                         <constraint firstItem="xCH-2D-Tmm" firstAttribute="leading" secondItem="g5a-bn-QYu" secondAttribute="trailing" constant="17" id="zOv-jJ-q1b"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contentLabel" destination="00N-17-4eS" id="f8b-Cm-Kl1"/>
+                                    <outlet property="posttimeLabel" destination="g5a-bn-QYu" id="Idp-ky-jau"/>
+                                    <outlet property="reviewsLabel" destination="xCH-2D-Tmm" id="mcp-xp-Xvy"/>
+                                    <outlet property="thumbnail" destination="DK7-Jj-bkU" id="2uv-wg-u9K"/>
+                                    <outlet property="titleLabel" destination="yqV-Pf-dUR" id="Wv4-v4-dt9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1161,13 +1181,13 @@
         <!--Second Segment Table View Controller-->
         <scene sceneID="Z4z-i8-huP">
             <objects>
-                <tableViewController storyboardIdentifier="ColummPage" id="PZu-ZK-FE6" customClass="SecondSegmentTableViewController" customModule="EUTour" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="articlesTableView" id="PZu-ZK-FE6" customClass="SecondSegmentTableViewController" customModule="EUTour" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="79" sectionHeaderHeight="22" sectionFooterHeight="22" id="KT1-z1-db7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="80" id="scc-fS-KfG">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="articlesTableView" rowHeight="80" id="scc-fS-KfG" userLabel="articlesTableView" customClass="articlesTableCellView" customModule="EUTour">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="scc-fS-KfG" id="frx-3e-IZD">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -1218,6 +1238,12 @@
                                         <constraint firstItem="Cj7-Qk-RLT" firstAttribute="top" secondItem="z2m-nC-wL1" secondAttribute="bottom" constant="8" id="zGt-gK-Se7"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="authButton" destination="fyi-yl-fbi" id="kYK-JM-Z9S"/>
+                                    <outlet property="contentLabel" destination="Cj7-Qk-RLT" id="t8v-Js-OHI"/>
+                                    <outlet property="thumbnail" destination="2Gi-dB-UhI" id="Hi7-TX-2IK"/>
+                                    <outlet property="titleLabel" destination="z2m-nC-wL1" id="Xcj-HT-b4d"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

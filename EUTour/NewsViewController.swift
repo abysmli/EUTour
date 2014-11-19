@@ -14,8 +14,10 @@ class NewsViewController: UIViewController {
     
     @IBOutlet weak var TableViewContainer: UIView!
     
-    
     @IBOutlet weak var ChangeTableViewSegment: UISegmentedControl!
+    
+    var newstableview:FirstSegmentTableViewController? = FirstSegmentTableViewController()
+    var articlestableview:SecondSegmentTableViewController? = SecondSegmentTableViewController()
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -37,18 +39,48 @@ class NewsViewController: UIViewController {
         
         self.navigationItem.title = "时事资讯"
         
-        //在toolbar底部增加分割线
-        var bottomBorder = CALayer()
-        var toolbar_height = self.ViewChange.frame.size.height-0.5
-        var toolbar_width = self.ViewChange.frame.size.width
-        bottomBorder.frame = CGRectMake(0.0, toolbar_height, toolbar_width, 0.5)
-        bottomBorder.backgroundColor = UIColor.grayColor().colorWithAlphaComponent(0.5).CGColor
-        self.ViewChange.layer.addSublayer(bottomBorder)
+        addBottomBorder()
         
-        //点击segment切换列表
+        newstableview = self.storyboard?.instantiateViewControllerWithIdentifier("newsTableView") as? FirstSegmentTableViewController
+        articlestableview = self.storyboard?.instantiateViewControllerWithIdentifier("articlesTableView") as? SecondSegmentTableViewController
+        
         ChangeTableViewSegment.selectedSegmentIndex = 0
         ChangeTableViewSegment.addTarget(self, action: "selectedSegmentDidChange:", forControlEvents: .ValueChanged)
+        
+        self.addChildViewController(newstableview!)
+        self.addChildViewController(articlestableview!)
+        TableViewContainer.addSubview(newstableview!.view)
+        
 
+    }
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    func selectedSegmentDidChange(segmentedControl: UISegmentedControl){
+        
+        
+        var vc:UITableViewController? = UITableViewController()
+        
+        let index = ChangeTableViewSegment.selectedSegmentIndex
+
+        
+        switch ChangeTableViewSegment.selectedSegmentIndex {
+        case 0 :
+            articlestableview?.removeFromParentViewController()
+            TableViewContainer.addSubview(newstableview!.view)
+        case 1 :
+            newstableview?.removeFromParentViewController()
+            TableViewContainer.addSubview(articlestableview!.view)
+        default:
+            println("impossible")
+        }
     }
     
     func findHairlineImageViewUnder(view:UIView!) -> UIView? {
@@ -77,37 +109,13 @@ class NewsViewController: UIViewController {
         self.ViewChange.tintColor = customColor
     }
     
-    // MARK: 切换页面
-    func selectedSegmentDidChange(segmentedControl: UISegmentedControl) -> UITableViewController? {
-        
-        NSLog("The selected segment changed for: \(ChangeTableViewSegment.selectedSegmentIndex).")
-        
-        var vc:UITableViewController?
-        var newsPage:FirstSegmentTableViewController!
-        var colummPage:SecondSegmentTableViewController!
-        
-        switch ChangeTableViewSegment.selectedSegmentIndex {
-        case 0 :
-            self.addChildViewController(newsPage)
-            self.TableViewContainer.addSubview(newsPage.tableView)
-            newsPage.didMoveToParentViewController(self)
-            //vc = self.storyboard.instantiateViewControllerWithIdentifier("NewsPage") as? UITableViewController
-        case 1 :
-            
-            self.addChildViewController(newsPage)
-            self.TableViewContainer.addSubview(newsPage.tableView)
-            newsPage.didMoveToParentViewController(self)
-            /*
-            self.addChildViewController(colummPage)
-            self.TableViewContainer.addSubview(colummPage.tableView)
-            colummPage.didMoveToParentViewController(self)
-            */
-            //vc = self.storyboard.instantiateViewControllerWithIdentifier("ColummPage") as? UITableViewController
-        default:
-            TableViewContainer.addSubview(newsPage.tableView)
-        }
-        
-        return vc
+    func addBottomBorder() {
+        var bottomBorder = CALayer()
+        var toolbar_height = self.ViewChange.frame.size.height-0.5
+        var toolbar_width = self.ViewChange.frame.size.width
+        bottomBorder.frame = CGRectMake(0.0, toolbar_height, toolbar_width, 0.5)
+        bottomBorder.backgroundColor = UIColor.grayColor().colorWithAlphaComponent(0.5).CGColor
+        self.ViewChange.layer.addSublayer(bottomBorder)
     }
     
 }

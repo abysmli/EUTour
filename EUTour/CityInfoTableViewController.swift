@@ -18,7 +18,7 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
         super.viewDidLoad()
         
         let manager = AFHTTPRequestOperationManager()
-        let url = "http://192.168.1.120:3000/cityinfos/all_cityinfos"
+        let url = "http://37.187.71.48:3000/cityinfos/all_cityinfos"
         
         manager.GET(url, parameters: nil,
             success: {
@@ -217,7 +217,32 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
     }
     
     func mTableView(mTable: TQMultistageTableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("didSelectRow \(indexPath.row)")
+        let dest_view:CityInfoViewController = self.storyboard?.instantiateViewControllerWithIdentifier("CityInfoDetailsView") as CityInfoViewController
+        let details:NSMutableArray = self.list?[indexPath.section]["details"] as NSMutableArray
+        dest_view._title = self.list![indexPath.section]["title"] as? String
+        dest_view._subtitle = self.list![indexPath.section]["name"] as? String
+        
+        dest_view._opendate = details[indexPath.row]["opentime1"] as? String
+        dest_view._opentime = details[indexPath.row]["opentime2"] as? String
+        dest_view._latitude = (details[indexPath.row]["latitude"] as? NSString)!.doubleValue
+        dest_view._longitude = (details[indexPath.row]["longitude"] as? NSString)!.doubleValue
+        dest_view._address = "Hanns-Martin-Schleyer-Straße 2\n71063 Sindelfingen"
+        dest_view._email = "abysmli@gmail.com"
+        dest_view._phonenumber = "+49 1578 7581536"
+        dest_view._website = "www.google.de"
+        dest_view._sbahn = "sindelfingen"
+        dest_view._ubahn = "sindelfingen"
+        
+        self.navigationController?.pushViewController(dest_view, animated: true)
+        
+        /*
+        CityInformation_DetailsViewController *dest_View = [self.storyboard instantiateViewControllerWithIdentifier:@"CityInformationDetailsViewController"];
+        dest_View.mLocation = [[CLLocation alloc] initWithLatitude:[self.list[indexPath.section][@"details"][indexPath.row][@"latitude"] doubleValue] longitude:[self.list[indexPath.section][@"details"][indexPath.row][@"longitude"] doubleValue]];
+        dest_View.mOpenTime_1 = [NSString stringWithFormat:@"%@",self.list[indexPath.section][@"details"][indexPath.row][@"opentime_1"]];
+        dest_View.mOpenTime_2 = [NSString stringWithFormat:@"%@",self.list[indexPath.section][@"details"][indexPath.row][@"opentime_2"]];
+        dest_View.mTitle = [NSString stringWithFormat:@"%@",self.list[indexPath.section][@"title"]];
+        [self.navigationController pushViewController:dest_View animated:YES];
+        */
     }
     
     /*
@@ -241,4 +266,16 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
         println("Close Row \(indexPath.row)")
     }
     */
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if (segue.identifier == "CityInfoDetailsView") {
+            let dest_View:CityInfoViewController = segue.destinationViewController as CityInfoViewController
+            dest_View.hidesBottomBarWhenPushed = true
+        }
+        
+    }
+
+    
 }

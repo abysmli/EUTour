@@ -7,21 +7,62 @@
 //
 
 import UIKit
+import MapKit
 
 class CityInfoViewController: UIViewController {
 
     @IBOutlet weak var opendate: UILabel!
     @IBOutlet weak var opentime: UILabel!
     @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var website: UILabel!
+    @IBOutlet weak var email: UILabel!
+    @IBOutlet weak var phonenumber: UILabel!
+    @IBOutlet weak var sbahn: UILabel!
+    @IBOutlet weak var ubahn: UILabel!
+    
+    @IBOutlet weak var mapview: MKMapView!
+    
+    
+    var _title:String? = nil
+    var _subtitle:String? = nil
+    var _opendate:String? = nil
+    var _opentime:String? = nil
+    var _address:String? = nil
+    var _website:String? = nil
+    var _email:String? = nil
+    var _phonenumber:String? = nil
+    var _sbahn:String? = nil
+    var _ubahn:String? = nil
+    var _latitude:Double = 0.0
+    var _longitude:Double = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.title = "外国人管理局"
         
-        opendate.text = "Mo,Di,Mi\nDo\nFr"
-        opentime.text = "08:30 - 13:00\n13:00 - 18:00\n08:30 - 12:00"
-        address.text = "Eberhardstrasse 39\n70173 Stuttgart"
+        
+        
+        mapview.showsUserLocation = true;
+        let region:MKCoordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: _latitude, longitude: _longitude), span: MKCoordinateSpanMake(0.01, 0.01))
+        
+        mapview.setRegion(region, animated: true)
+        
+        let ann:MKPointAnnotation = MKPointAnnotation()
+        ann.coordinate = region.center
+        ann.title = _title
+        ann.subtitle = _subtitle
+
+        mapview.addAnnotation(ann)
+        opendate.text = _opendate
+        opentime.text = _opentime
+        phonenumber.text = _phonenumber;
+        email.text = _email;
+        website.text = _website;
+        ubahn.text = _ubahn;
+        sbahn.text = _sbahn;
+        address.text = _address;
+
         println("cityinfoview")
         // Do any additional setup after loading the view.
     }

@@ -10,14 +10,31 @@ import UIKit
 
 class SecondSegmentTableViewController: UITableViewController {
 
+    var data:NSArray? = NSArray()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
+        //self.clearsSelectionOnViewWillAppear = false
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
+        let manager = AFHTTPRequestOperationManager()
+        let url = "http://37.187.71.48:3000/articles/all_articles"
+        
+        manager.GET(url, parameters: nil,
+            success: {
+                (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                println(responseObject as? NSArray)
+                self.data = responseObject as? NSArray
+                self.tableView.reloadData()
+            }, failure: {
+                (operation: AFHTTPRequestOperation!, error: NSError!) in println("ERROR: " + error.localizedDescription)
+        })
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,18 +44,25 @@ class SecondSegmentTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
-    }
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
+        return data!.count
     }
-
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell:articlesTableCellView? = tableView.dequeueReusableCellWithIdentifier("articlesTableView", forIndexPath: indexPath) as? articlesTableCellView
+        
+        if (cell == nil)
+        {
+            return cell!
+        }
+        
+        cell!.titleLabel?.text = data![indexPath.row]["title"] as? String
+        cell!.thumbnail?.image = UIImage(named:"BBS")
+        cell!.contentLabel?.text = data![indexPath.row]["content"] as? String
+        cell!.authButton?.setTitle("Li, Yuan", forState: UIControlState.Normal)//data![indexPath.row]["user_id"] as? NSInteger
+        return cell!
+    }
+    
     /*
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell

@@ -10,36 +10,51 @@ import UIKit
 
 class FirstSegmentTableViewController: UITableViewController {
     
-    var myData_ChineseTitle:Array<String> = ["外国人管理局","德意志银行","德国邮政","AOK保险公司","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1"]
+    var data:NSArray? = NSArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        //self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
+        let manager = AFHTTPRequestOperationManager()
+        let url = "http://37.187.71.48:3000/news/all_news"
+        
+        manager.GET(url, parameters: nil,
+            success: {
+                (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                self.data = responseObject as? NSArray
+                self.tableView.reloadData()
+            }, failure: {
+                (operation: AFHTTPRequestOperation!, error: NSError!) in println("ERROR: " + error.localizedDescription)
+        })
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return myData_ChineseTitle.count
+        return data!.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("test", forIndexPath: indexPath) as UITableViewCell
+        var cell:newsTableCellView? = tableView.dequeueReusableCellWithIdentifier("newsTableView", forIndexPath: indexPath) as? newsTableCellView
         
-        cell.textLabel.text = self.myData_ChineseTitle[indexPath.row]
+        if (cell == nil)
+        {
+            return cell!
+        }
         
-        return cell
+        cell!.titleLabel?.text = data![indexPath.row]["title"] as? String
+        cell!.thumbnail?.image = UIImage(named:"BBS")
+        cell!.contentLabel?.text = data![indexPath.row]["content"] as? String
+        cell!.posttimeLabel?.text = data![indexPath.row]["news_date"] as? String
+        cell!.reviewsLabel?.text = data![indexPath.row]["read_counter"] as? String
+        return cell!
     }
     
     

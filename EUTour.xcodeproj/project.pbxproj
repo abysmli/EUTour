@@ -34,6 +34,8 @@
 		39FB7D0A199B3C540023B969 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FB7D09199B3C540023B969 /* SettingTableViewController.swift */; };
 		B727366FE8DF4DC5A5AAE231 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4D88B96B7A24B90B537FC56 /* libPods.a */; };
 		BCBD33941A1000EB0082075D /* CityInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D9B965199CD1B3004C89CA /* CityInfoTableViewController.swift */; };
+		BCC32FFA1A1AF8B7004C2184 /* newsTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC32FF91A1AF8B7004C2184 /* newsTableCellView.swift */; };
+		BCC32FFC1A1B01CF004C2184 /* articlesTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC32FFB1A1B01CF004C2184 /* articlesTableCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,8 @@
 		39F931D919A57E82003BD154 /* SecondSegmentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondSegmentTableViewController.swift; sourceTree = "<group>"; };
 		39FB7D07199B28C30023B969 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		39FB7D09199B3C540023B969 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		BCC32FF91A1AF8B7004C2184 /* newsTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newsTableCellView.swift; sourceTree = "<group>"; };
+		BCC32FFB1A1B01CF004C2184 /* articlesTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = articlesTableCellView.swift; sourceTree = "<group>"; };
 		D4D88B96B7A24B90B537FC56 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -308,6 +312,8 @@
 				3909F38B19A3DBC2008A43E9 /* NewsViewController.swift */,
 				39F931D719A57E73003BD154 /* FirstSegmentTableViewController.swift */,
 				39F931D919A57E82003BD154 /* SecondSegmentTableViewController.swift */,
+				BCC32FF91A1AF8B7004C2184 /* newsTableCellView.swift */,
+				BCC32FFB1A1B01CF004C2184 /* articlesTableCellView.swift */,
 			);
 			name = news;
 			sourceTree = "<group>";
@@ -469,7 +475,7 @@
 					};
 					399DD6AB1998367100D14BD3 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = VXX7484L47;
+						DevelopmentTeam = 4YMW3G2T54;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -591,6 +597,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCC32FFC1A1B01CF004C2184 /* articlesTableCellView.swift in Sources */,
 				39FB7D0A199B3C540023B969 /* SettingTableViewController.swift in Sources */,
 				397EF7BA1A14CEEE00486543 /* UniversitiesTableViewController.swift in Sources */,
 				3909F38C19A3DBC2008A43E9 /* NewsViewController.swift in Sources */,
@@ -603,6 +610,7 @@
 				39E2333E1999AA4B00E57B15 /* PostMenuTableViewController.swift in Sources */,
 				39D4206419AF667500F9D54E /* TQMultistageTableView.m in Sources */,
 				399DD6B21998367100D14BD3 /* AppDelegate.swift in Sources */,
+				BCC32FFA1A1AF8B7004C2184 /* newsTableCellView.swift in Sources */,
 				390944941998ED2400A61C3F /* HomePageViewController.swift in Sources */,
 				390944991998EFFC00A61C3F /* CityInfoViewController.swift in Sources */,
 				39BDA5041A0D1A7A009BA60F /* CityInfoSearchResultsViewController.swift in Sources */,
