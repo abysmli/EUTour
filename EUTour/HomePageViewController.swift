@@ -9,6 +9,26 @@
 import UIKit
 import CoreLocation
 
+// MARK: 子版块配色
+
+extension UIColor {
+    class func applicationRentInfoColor() -> UIColor {
+        return UIColor(red: 96/255, green: 209/255, blue: 68/255, alpha: 1)
+    }
+    
+    class func applicationNewsColor() -> UIColor {
+        return UIColor(red: 249/255, green: 84/255, blue: 89/255, alpha: 1)
+    }
+    
+    class func applicationCityInfoColor() -> UIColor {
+        return UIColor(red: 189/255, green: 65/255, blue: 190/255, alpha: 1)
+    }
+    
+    class func applicaitonUniColor() -> UIColor {
+        return UIColor(red: 255/255, green: 142/255, blue: 78/255, alpha: 1)
+    }
+}
+
 class HomePageViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var current_rate_title: UILabel!
@@ -22,6 +42,9 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
     
     
     let locationManger:CLLocationManager = CLLocationManager()
+    
+    
+    
     
     
     override func viewDidLoad() {

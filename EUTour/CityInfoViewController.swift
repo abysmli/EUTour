@@ -11,6 +11,13 @@ import MapKit
 
 class CityInfoViewController: UIViewController {
 
+    
+    @IBOutlet weak var opentime_title: UILabel!
+    @IBOutlet weak var contact_title: UILabel!
+    @IBOutlet weak var traffic_title: UILabel!
+    @IBOutlet weak var address_title: UILabel!
+    @IBOutlet weak var BackgroundView: UIScrollView!
+    
     @IBOutlet weak var opendate: UILabel!
     @IBOutlet weak var opentime: UILabel!
     @IBOutlet weak var address: UILabel!
@@ -22,6 +29,11 @@ class CityInfoViewController: UIViewController {
     
     @IBOutlet weak var mapview: MKMapView!
     
+    //定义每个子项
+    @IBOutlet weak var opentime_view: UIView!
+    @IBOutlet weak var contact_view: UIView!
+    @IBOutlet weak var traffic_view: UIView!
+    @IBOutlet weak var address_view: UIView!
     
     var _title:String? = nil
     var _subtitle:String? = nil
@@ -38,22 +50,22 @@ class CityInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationItem.title = "外国人管理局"
         
         
+        //地图配置
         
         mapview.showsUserLocation = true;
-        let region:MKCoordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: _latitude, longitude: _longitude), span: MKCoordinateSpanMake(0.01, 0.01))
+        let destination_location:MKCoordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 48.772816, longitude: 9.177671), span: MKCoordinateSpanMake(0.005, 0.005))
         
-        mapview.setRegion(region, animated: true)
+        mapview.setRegion(destination_location, animated: true)
         
-        let ann:MKPointAnnotation = MKPointAnnotation()
-        ann.coordinate = region.center
-        ann.title = _title
-        ann.subtitle = _subtitle
+        let location_pin:MKPointAnnotation = MKPointAnnotation()
+        location_pin.coordinate = destination_location.center
+        location_pin.title = _title
+        location_pin.subtitle = _subtitle
 
-        mapview.addAnnotation(ann)
+        mapview.addAnnotation(location_pin)
         opendate.text = _opendate
         opentime.text = _opentime
         phonenumber.text = _phonenumber;
@@ -62,17 +74,27 @@ class CityInfoViewController: UIViewController {
         ubahn.text = _ubahn;
         sbahn.text = _sbahn;
         address.text = _address;
-
-        println("cityinfoview")
-        // Do any additional setup after loading the view.
+        
+        //UI配置
+        
+        opentime_title.textColor = UIColor.applicationCityInfoColor()
+        contact_title.textColor = UIColor.applicationCityInfoColor()
+        traffic_title.textColor = UIColor.applicationCityInfoColor()
+        address_title.textColor = UIColor.applicationCityInfoColor()
+        self.navigationController?.navigationBar.tintColor = UIColor.applicationCityInfoColor()
+        
+        self.view.viewWithTag(2)?.removeFromSuperview()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.tintColor = UIColor.applicationCityInfoColor()
+
     }
     
-
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.BackgroundView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height+20)
+    }
     /*
     // MARK: - Navigation
 

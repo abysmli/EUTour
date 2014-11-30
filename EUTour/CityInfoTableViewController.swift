@@ -216,7 +216,10 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
         return 86;
     }
     
+    
     func mTableView(mTable: TQMultistageTableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        
         let dest_view:CityInfoViewController = self.storyboard?.instantiateViewControllerWithIdentifier("CityInfoDetailsView") as CityInfoViewController
         let details:NSMutableArray = self.list?[indexPath.section]["details"] as NSMutableArray
         dest_view._title = self.list![indexPath.section]["title"] as? String
@@ -244,7 +247,7 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
         [self.navigationController pushViewController:dest_View animated:YES];
         */
     }
-    
+
     /*
     //pragma mark - Header Open Or Close
     
@@ -267,6 +270,8 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
     }
     */
     
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
@@ -276,6 +281,23 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
         }
         
     }
-
+    
+    // MARK: UI设置
+    
+    override func viewWillAppear(animated: Bool) {
+        //定义变量
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.applicationCityInfoColor()]
+        
+        //改变颜色
+        self.navigationController?.navigationBar.titleTextAttributes = titleDict
+        self.navigationController?.navigationBar.tintColor = UIColor.applicationCityInfoColor()
+        self.navigationController?.view.backgroundColor = UIColor.whiteColor()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.view.backgroundColor = UIColor.whiteColor()
+        self.navigationController?.navigationBar.tintColor = nil
+    }
     
 }

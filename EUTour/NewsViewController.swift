@@ -54,15 +54,6 @@ class NewsViewController: UIViewController {
 
     }
     
-
-    
-    
-    
-    
-    
-    
-    
-    
     func selectedSegmentDidChange(segmentedControl: UISegmentedControl){
         
         
@@ -83,6 +74,8 @@ class NewsViewController: UIViewController {
         }
     }
     
+    //去掉导航栏下面的线
+    
     func findHairlineImageViewUnder(view:UIView!) -> UIView? {
         if  view is UIImageView && view.bounds.size.height <= 1.0 {
             return view
@@ -97,18 +90,19 @@ class NewsViewController: UIViewController {
     }
     
     
-    // MARK: 设置页面主题色
+    // MARK: UI初始化
+    
     func changeFontColorOnView() {
         //定义变量
-        var customColor = UIColor(red: 249.0/255.0, green: 84.0/255.0, blue: 89.0/255.0, alpha: 1.0)
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: customColor]
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.applicationNewsColor()]
         
         //改变颜色
         self.navigationController?.navigationBar.titleTextAttributes = titleDict
-        self.navigationController?.navigationBar.tintColor = customColor
-        self.ViewChange.tintColor = customColor
+        self.navigationController?.navigationBar.tintColor = UIColor.applicationNewsColor()
+        self.ViewChange.tintColor = UIColor.applicationNewsColor()
     }
     
+    //在segment下面添加细线
     func addBottomBorder() {
         var bottomBorder = CALayer()
         var toolbar_height = self.ViewChange.frame.size.height-0.5
