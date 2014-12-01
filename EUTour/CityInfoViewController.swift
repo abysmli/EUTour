@@ -8,8 +8,9 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class CityInfoViewController: UIViewController {
+class CityInfoViewController: UIViewController, CLLocationManagerDelegate {
 
     
     @IBOutlet weak var opentime_title: UILabel!
@@ -28,7 +29,7 @@ class CityInfoViewController: UIViewController {
     @IBOutlet weak var ubahn: UILabel!
     
     @IBOutlet weak var mapview: MKMapView!
-    
+    let locationManger:CLLocationManager = CLLocationManager()
     //定义每个子项
     @IBOutlet weak var opentime_view: UIView!
     @IBOutlet weak var contact_view: UIView!
@@ -56,7 +57,7 @@ class CityInfoViewController: UIViewController {
         //地图配置
         
         mapview.showsUserLocation = true;
-        let destination_location:MKCoordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 48.772816, longitude: 9.177671), span: MKCoordinateSpanMake(0.005, 0.005))
+        let destination_location:MKCoordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: _latitude, longitude: _longitude), span: MKCoordinateSpanMake(0.005, 0.005))
         
         mapview.setRegion(destination_location, animated: true)
         
@@ -83,7 +84,9 @@ class CityInfoViewController: UIViewController {
         address_title.textColor = UIColor.applicationCityInfoColor()
         self.navigationController?.navigationBar.tintColor = UIColor.applicationCityInfoColor()
         
-        self.view.viewWithTag(2)?.removeFromSuperview()
+        self.navigationItem.rightBarButtonItem = navigation_logo
+        //self.view.viewWithTag(2)?.removeFromSuperview()
+        
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -93,16 +96,67 @@ class CityInfoViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.BackgroundView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height+20)
+        self.BackgroundView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height+64)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    // 导航部分
+    
+    var navigation_logo: UIBarButtonItem {
+        return UIBarButtonItem(image: UIImage(named: "navigation_arrow"),style: .Plain, target: self, action: "callNavigation")
     }
-    */
+    
+    
+    func callNavigation() {
+        let cancelButtonTitle = NSLocalizedString("取消", comment: "OK")
+        let navigation_apple = NSLocalizedString("苹果地图", comment: "")
+        let navigation_google = NSLocalizedString("谷歌地图", comment: "")
+        
+        var alertController: UIAlertController = UIAlertController(title: "请选择要使用的地图", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        
+        var appleMapAction: UIAlertAction = UIAlertAction(title: navigation_apple, style: UIAlertActionStyle.Default, handler: {
+            (action: UIAlertAction!) in self.callAppleMap()
+        })
+        
+        var googleMapAction: UIAlertAction = UIAlertAction(title: navigation_google, style: UIAlertActionStyle.Default, handler: {
+            (action: UIAlertAction!) in self.callGoogleMap()
+        })
+        
+        var cancelAction: UIAlertAction = UIAlertAction(title: cancelButtonTitle, style: UIAlertActionStyle.Cancel, handler: {
+            (action: UIAlertAction!) in println("\(action.title)")
+        })
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(appleMapAction)
+        
+        if (UIApplication.sharedApplication().canOpenURL(NSURL(string: "comgooglemaps://")!)) {
+            alertController.addAction(googleMapAction)
+        }
+        
+        
+        self.presentViewController(alertController, animated: true, completion: { println("Alert showed")
+        })
+    }
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        
+        var location:CLLocation = locations[locations.count-1] as CLLocation
+        if location.horizontalAccuracy > 0 {
+            locationManger.stopUpdatingLocation()
+        }
+    }
+    
+    func callAppleMap() {
+        self.locationManger.stopUpdatingLocation()
+        var latitude = locationManger.location.coordinate.latitude
+        var longitude = locationManger.location.coordinate.longitude
+        UIApplication.sharedApplication().openURL(NSURL(string: "http://maps.apple.com/?saddr=\(latitude),\(longitude)&daddr=\(_latitude),\(_longitude)")!)
+    }
+    
+    func callGoogleMap() {
+        self.locationManger.stopUpdatingLocation()
+        var latitude = locationManger.location.coordinate.latitude
+        var longitude = locationManger.location.coordinate.longitude
+        UIApplication.sharedApplication().openURL(NSURL(string: "comgooglemaps://?saddr=\(latitude),\(longitude)&daddr=\(_latitude),\(_longitude)")!)
+    }
 
 }

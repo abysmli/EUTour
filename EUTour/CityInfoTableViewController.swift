@@ -229,13 +229,14 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
         dest_view._opentime = details[indexPath.row]["opentime2"] as? String
         dest_view._latitude = (details[indexPath.row]["latitude"] as? NSString)!.doubleValue
         dest_view._longitude = (details[indexPath.row]["longitude"] as? NSString)!.doubleValue
-        dest_view._address = "Hanns-Martin-Schleyer-Straße 2\n71063 Sindelfingen"
+        
+        dest_view._address = details[indexPath.row]["address"] as? String
         dest_view._email = "abysmli@gmail.com"
         dest_view._phonenumber = "+49 1578 7581536"
         dest_view._website = "www.google.de"
         dest_view._sbahn = "sindelfingen"
         dest_view._ubahn = "sindelfingen"
-        
+
         self.navigationController?.pushViewController(dest_view, animated: true)
         
         /*
