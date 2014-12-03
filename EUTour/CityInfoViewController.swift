@@ -12,6 +12,7 @@ import CoreLocation
 
 class CityInfoViewController: UIViewController, CLLocationManagerDelegate {
 
+    // MARK: 控件定义
     
     @IBOutlet weak var opentime_title: UILabel!
     @IBOutlet weak var contact_title: UILabel!
@@ -36,6 +37,8 @@ class CityInfoViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var traffic_view: UIView!
     @IBOutlet weak var address_view: UIView!
     
+    // MARK: 变量定义
+    
     var _title:String? = nil
     var _subtitle:String? = nil
     var _opendate:String? = nil
@@ -43,16 +46,17 @@ class CityInfoViewController: UIViewController, CLLocationManagerDelegate {
     var _address:String? = nil
     var _website:String? = nil
     var _email:String? = nil
-    var _phonenumber:String? = nil
+    var _phonenumber:String! = nil
     var _sbahn:String? = nil
     var _ubahn:String? = nil
     var _latitude:Double = 0.0
     var _longitude:Double = 0.0
     
+    // MARK: 主程序
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "外国人管理局"
-        
         
         //地图配置
         
@@ -87,6 +91,15 @@ class CityInfoViewController: UIViewController, CLLocationManagerDelegate {
         self.navigationItem.rightBarButtonItem = navigation_logo
         //self.view.viewWithTag(2)?.removeFromSuperview()
         
+        
+        var tapGestureTel:UITapGestureRecognizer! = UITapGestureRecognizer(target: self, action: "callPhoneApp")
+        var tapGestureMail:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "openMailApp")
+        
+        
+        //self.phonenumber.userInteractionEnabled = true
+        self.phonenumber.addGestureRecognizer(tapGestureTel)
+        //self.email.userInteractionEnabled = true
+        self.email.addGestureRecognizer(tapGestureMail)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -99,7 +112,68 @@ class CityInfoViewController: UIViewController, CLLocationManagerDelegate {
         self.BackgroundView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height+64)
     }
     
-    // 导航部分
+    // MARK: 呼叫电话，打开邮件，打开链接
+    
+    // 呼叫电话, 弃用，使用telprompt方法打电话
+    func openPhoneApp() {
+        var phoneNum:String! = _phonenumber
+        let title = NSLocalizedString("呼叫\(phoneNum)？", comment: "")
+        var message = NSLocalizedString("\(_phonenumber)", comment: "")
+        let cancelButtonTitle = NSLocalizedString("取消", comment: "")
+        let otherButtonTitle = NSLocalizedString("确定", comment: "")
+        
+        let alertController = UIAlertController(title: title, message: nil, preferredStyle: .Alert)
+        
+        // Create the actions.
+        let cancelAction = UIAlertAction(title: cancelButtonTitle, style: .Cancel) { action in
+            NSLog("The \"Okay/Cancel\" alert's cancel action occured.")
+        }
+        let otherAction = UIAlertAction(title: otherButtonTitle, style: .Default) { (action: UIAlertAction!) in self.callPhoneApp()
+        }
+        
+        // Add the actions.
+        alertController.addAction(cancelAction)
+        alertController.addAction(otherAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    // 打开邮件
+    func openMailApp() {
+        var emailLink:String! = _email
+        let title = NSLocalizedString("发送邮件到\(emailLink)？", comment: "")
+        var message = NSLocalizedString("\(emailLink)", comment: "")
+        let cancelButtonTitle = NSLocalizedString("取消", comment: "")
+        let otherButtonTitle = NSLocalizedString("确定", comment: "")
+        
+        let alertController = UIAlertController(title: title, message: nil, preferredStyle: .Alert)
+        
+        // Create the actions.
+        let cancelAction = UIAlertAction(title: cancelButtonTitle, style: .Cancel) { action in
+            NSLog("The \"Okay/Cancel\" alert's cancel action occured.")
+        }
+        let otherAction = UIAlertAction(title: otherButtonTitle, style: .Default) { (action: UIAlertAction!) in self.callMailApp()
+        }
+        
+        // Add the actions.
+        alertController.addAction(cancelAction)
+        alertController.addAction(otherAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func callPhoneApp() {
+        var phoneNum:String! = _phonenumber.stringByReplacingOccurrencesOfString(" ", withString: "")
+        UIApplication.sharedApplication().openURL(NSURL(string: "telprompt://\(phoneNum)")!)
+    }
+    
+    
+    func callMailApp() {
+        var emailLink:String! = _email
+        UIApplication.sharedApplication().openURL(NSURL(string: "mailto://\(emailLink)")!)
+    }
+    
+    // MARK: 导航部分
     
     var navigation_logo: UIBarButtonItem {
         return UIBarButtonItem(image: UIImage(named: "navigation_arrow"),style: .Plain, target: self, action: "callNavigation")

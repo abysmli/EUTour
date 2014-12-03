@@ -34,6 +34,7 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
         self.mTableView!.dataSource = self
         self.view.addSubview(self.mTableView!)
         self.navigationItem.title = "城市信息"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "map_icon"), style: .Plain, target: self, action: nil)
 
         // Do any additional setup after loading the view.
     }
@@ -232,7 +233,7 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
         
         dest_view._address = details[indexPath.row]["address"] as? String
         dest_view._email = "abysmli@gmail.com"
-        dest_view._phonenumber = "+49 1578 7581536"
+        dest_view._phonenumber = "+49 157 87581536"
         dest_view._website = "www.google.de"
         dest_view._sbahn = "sindelfingen"
         dest_view._ubahn = "sindelfingen"

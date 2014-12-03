@@ -13,7 +13,7 @@ import CoreLocation
 
 extension UIColor {
     class func applicationRentInfoColor() -> UIColor {
-        return UIColor(red: 96/255, green: 209/255, blue: 68/255, alpha: 1)
+        return UIColor(red: 22/255, green: 160/255, blue: 130/255, alpha: 1)
     }
     
     class func applicationNewsColor() -> UIColor {
@@ -26,6 +26,10 @@ extension UIColor {
     
     class func applicaitonUniColor() -> UIColor {
         return UIColor(red: 255/255, green: 142/255, blue: 78/255, alpha: 1)
+    }
+    
+    class func customGray() -> UIColor {
+        return UIColor(red: 216/255, green: 216/255, blue: 216/255, alpha: 216/255)
     }
 }
 
@@ -42,7 +46,6 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
     
     
     let locationManger:CLLocationManager = CLLocationManager()
-    
     
     
     
