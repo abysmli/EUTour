@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RentTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+class RentTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, UIPopoverControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +54,12 @@ class RentTableViewController: UITableViewController, UITableViewDataSource, UIT
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 120
     }
+    
+    /*
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.navigationController?.pushViewController(FilterTableViewController(), animated: true)
+    }
+    */
 
     override func viewWillAppear(animated: Bool) {
         //定义变量
@@ -70,5 +76,8 @@ class RentTableViewController: UITableViewController, UITableViewDataSource, UIT
         self.navigationController?.view.backgroundColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.tintColor = nil
     }
-
+    
+    func callFilterTableView() {
+        
+    }
 }

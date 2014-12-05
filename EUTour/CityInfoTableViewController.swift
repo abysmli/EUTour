@@ -136,7 +136,7 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
         label_opentime_weekdays.font = UIFont(name:"Arial", size:13.0)
         label_opentime_weekdays.text = details[indexPath.row]["opentime1"] as? String
         label_opentime_weekdays.textColor = UIColor(red:181/255.0, green:181/255.0, blue:181/255.0, alpha:1.0)
-        label_opentime_weekdays.frame = CGRectMake(158, 20, 150, 40)
+        label_opentime_weekdays.frame = CGRectMake(148, 20, 150, 40)
         label_opentime_weekdays.numberOfLines = 4
         label_opentime_weekdays.sizeToFit()
         

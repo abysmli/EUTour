@@ -127,8 +127,9 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
     func updateExchangeRateSuccess(jsonResult:NSDictionary!) {
         
         if let exchangerate = (jsonResult["from"] as? String) {
-            var rate = jsonResult["rate"] as NSNumber
-            self.current_rate.text = "\(rate)"
+            var rate = jsonResult["rate"] as Double
+            let rateDisplay = String(format: "%.2f", rate)
+            self.current_rate.text = "\(rateDisplay)"
         }
     }
     
