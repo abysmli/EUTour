@@ -23,6 +23,7 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
         manager.GET(url, parameters: nil,
             success: {
                 (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                println(responseObject as NSArray)
                 self.list = self.listGenerator(responseObject as NSArray)
                 self.mTableView?.reloadData()
             }, failure: {
@@ -49,8 +50,12 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
                         "station"          :   _row["station"] as String,
                         "longitude"        :   _row["longitude"] as String,
                         "latitude"         :   _row["latitude"] as String,
-                        "opentime1"       :   _row["opentime1"] as String,
-                        "opentime2"       :   _row["opentime2"] as String]
+                        "opentime1"        :   _row["opentime1"] as String,
+                        "opentime2"        :   _row["opentime2"] as String,
+                        "address"          :   _row["details"] as String,
+                        "email"            :   _row["email"] as String,
+                        "phonenumber"      :   _row["tel"] as String,
+                        "website"          :   _row["url"] as String]
                     (dict["details"] as NSMutableArray).addObject(sub_dict)
                     flag = true
                 }
@@ -62,8 +67,11 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
                     "longitude"        :   _row["longitude"] as String,
                     "latitude"         :   _row["latitude"] as String,
                     "opentime1"       :   _row["opentime1"] as String,
-                    "opentime2"       :   _row["opentime2"] as String]
-                
+                    "opentime2"       :   _row["opentime2"] as String,
+                    "address"          :   _row["details"] as String,
+                    "email"            :   _row["email"] as String,
+                    "phonenumber"      :   _row["tel"] as String,
+                    "website"          :   _row["url"] as String]
                 let sub_array:NSMutableArray = NSMutableArray(object: sub_dict)
                 var dict:NSDictionary = ["title"        :   _row["title"] as String,
                     "name"         :   _row["name"] as String,
@@ -226,12 +234,12 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
         dest_view._opentime = details[indexPath.row]["opentime2"] as? String
         dest_view._latitude = (details[indexPath.row]["latitude"] as? NSString)!.doubleValue
         dest_view._longitude = (details[indexPath.row]["longitude"] as? NSString)!.doubleValue
-        dest_view._address = "Hanns-Martin-Schleyer-Straße 2\n71063 Sindelfingen"
-        dest_view._email = "abysmli@gmail.com"
-        dest_view._phonenumber = "+49 1578 7581536"
-        dest_view._website = "www.google.de"
-        dest_view._sbahn = "sindelfingen"
-        dest_view._ubahn = "sindelfingen"
+        dest_view._address = details[indexPath.row]["details"] as? String
+        dest_view._email = details[indexPath.row]["email"] as? String
+        dest_view._phonenumber = details[indexPath.row]["tel"] as? String
+        dest_view._website = details[indexPath.row]["url"] as? String
+        dest_view._sbahn = details[indexPath.row]["station"] as? String
+        dest_view._ubahn = details[indexPath.row]["station"] as? String
         
         self.navigationController?.pushViewController(dest_view, animated: true)
         

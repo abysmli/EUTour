@@ -47,9 +47,9 @@ class UniversitiesTableViewController: UITableViewController, UITableViewDelegat
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = universitiesTableView.dequeueReusableCellWithIdentifier("Uni", forIndexPath: indexPath) as UITableViewCell
 
-        cell.textLabel.text = self.uni_name_cn[indexPath.row]
+        cell.textLabel?.text = self.uni_name_cn[indexPath.row]
         cell.detailTextLabel?.text = self.uni_name_de[indexPath.row]
-        cell.imageView.image = self.uni_logo[indexPath.row]
+        cell.imageView?.image = self.uni_logo[indexPath.row]
 
         return cell
     }
