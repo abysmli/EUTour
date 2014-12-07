@@ -2,16 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "蓝色箭头.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "房屋租赁@2x.png"
+      "filename" : "蓝色箭头@2x.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "蓝色箭头@3x.png"
     }
   ],
   "info" : {

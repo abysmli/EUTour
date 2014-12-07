@@ -16,7 +16,10 @@
 		390944961998EE1D00A61C3F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 390944951998EE1D00A61C3F /* MapKit.framework */; };
 		390944991998EFFC00A61C3F /* CityInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390944981998EFFC00A61C3F /* CityInfoViewController.swift */; };
 		3909F38C19A3DBC2008A43E9 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3909F38B19A3DBC2008A43E9 /* NewsViewController.swift */; };
+		3910FBA11A2EB0DF00867BAA /* RentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3910FBA01A2EB0DF00867BAA /* RentTableViewController.swift */; };
+		3910FBA31A2EB30600867BAA /* RentListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3910FBA21A2EB30600867BAA /* RentListTableViewCell.swift */; };
 		397EF7BA1A14CEEE00486543 /* UniversitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397EF7B91A14CEEE00486543 /* UniversitiesTableViewController.swift */; };
+		399CAE1A1A2FE95F008281E2 /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CAE191A2FE95F008281E2 /* FilterTableViewController.swift */; };
 		399DD6B21998367100D14BD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399DD6B11998367100D14BD3 /* AppDelegate.swift */; };
 		399DD6B41998367100D14BD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399DD6B31998367100D14BD3 /* ViewController.swift */; };
 		399DD6B71998367100D14BD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 399DD6B51998367100D14BD3 /* Main.storyboard */; };
@@ -97,8 +100,11 @@
 		390944951998EE1D00A61C3F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		390944981998EFFC00A61C3F /* CityInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityInfoViewController.swift; sourceTree = "<group>"; };
 		3909F38B19A3DBC2008A43E9 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		3910FBA01A2EB0DF00867BAA /* RentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentTableViewController.swift; sourceTree = "<group>"; };
+		3910FBA21A2EB30600867BAA /* RentListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentListTableViewCell.swift; sourceTree = "<group>"; };
 		397BEAB5199E951D00E1A7E6 /* Weather-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weather-Bridging-Header.h"; sourceTree = "<group>"; };
 		397EF7B91A14CEEE00486543 /* UniversitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversitiesTableViewController.swift; sourceTree = "<group>"; };
+		399CAE191A2FE95F008281E2 /* FilterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
 		399DD6AC1998367100D14BD3 /* EUTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EUTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		399DD6B01998367100D14BD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		399DD6B11998367100D14BD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -343,6 +349,9 @@
 		39E3C2EC1A0B68A900106675 /* rent info */ = {
 			isa = PBXGroup;
 			children = (
+				3910FBA01A2EB0DF00867BAA /* RentTableViewController.swift */,
+				3910FBA21A2EB30600867BAA /* RentListTableViewCell.swift */,
+				399CAE191A2FE95F008281E2 /* FilterTableViewController.swift */,
 			);
 			name = "rent info";
 			sourceTree = "<group>";
@@ -475,7 +484,7 @@
 					};
 					399DD6AB1998367100D14BD3 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = 4YMW3G2T54;
+						DevelopmentTeam = VXX7484L47;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -601,17 +610,20 @@
 				39FB7D0A199B3C540023B969 /* SettingTableViewController.swift in Sources */,
 				397EF7BA1A14CEEE00486543 /* UniversitiesTableViewController.swift in Sources */,
 				3909F38C19A3DBC2008A43E9 /* NewsViewController.swift in Sources */,
+				399CAE1A1A2FE95F008281E2 /* FilterTableViewController.swift in Sources */,
 				39F931D819A57E73003BD154 /* FirstSegmentTableViewController.swift in Sources */,
 				BCBD33941A1000EB0082075D /* CityInfoTableViewController.swift in Sources */,
 				399DD6B41998367100D14BD3 /* ViewController.swift in Sources */,
 				39FB7D08199B28C30023B969 /* SignUpViewController.swift in Sources */,
 				39BDA5061A0D1AC7009BA60F /* CityInfoSearchShowResultsInSourceViewController.swift in Sources */,
 				39E2333C1999A2B500E57B15 /* MeTableViewController.swift in Sources */,
+				3910FBA31A2EB30600867BAA /* RentListTableViewCell.swift in Sources */,
 				39E2333E1999AA4B00E57B15 /* PostMenuTableViewController.swift in Sources */,
 				39D4206419AF667500F9D54E /* TQMultistageTableView.m in Sources */,
 				399DD6B21998367100D14BD3 /* AppDelegate.swift in Sources */,
 				BCC32FFA1A1AF8B7004C2184 /* newsTableCellView.swift in Sources */,
 				390944941998ED2400A61C3F /* HomePageViewController.swift in Sources */,
+				3910FBA11A2EB0DF00867BAA /* RentTableViewController.swift in Sources */,
 				390944991998EFFC00A61C3F /* CityInfoViewController.swift in Sources */,
 				39BDA5041A0D1A7A009BA60F /* CityInfoSearchResultsViewController.swift in Sources */,
 				39F931DA19A57E82003BD154 /* SecondSegmentTableViewController.swift in Sources */,

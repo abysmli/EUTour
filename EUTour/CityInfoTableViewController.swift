@@ -35,6 +35,7 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
         self.mTableView!.dataSource = self
         self.view.addSubview(self.mTableView!)
         self.navigationItem.title = "城市信息"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "map_icon"), style: .Plain, target: self, action: nil)
 
         // Do any additional setup after loading the view.
     }
@@ -143,7 +144,7 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
         label_opentime_weekdays.font = UIFont(name:"Arial", size:13.0)
         label_opentime_weekdays.text = details[indexPath.row]["opentime1"] as? String
         label_opentime_weekdays.textColor = UIColor(red:181/255.0, green:181/255.0, blue:181/255.0, alpha:1.0)
-        label_opentime_weekdays.frame = CGRectMake(158, 20, 150, 40)
+        label_opentime_weekdays.frame = CGRectMake(148, 20, 150, 40)
         label_opentime_weekdays.numberOfLines = 4
         label_opentime_weekdays.sizeToFit()
         
@@ -224,7 +225,10 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
         return 86;
     }
     
+    
     func mTableView(mTable: TQMultistageTableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        
         let dest_view:CityInfoViewController = self.storyboard?.instantiateViewControllerWithIdentifier("CityInfoDetailsView") as CityInfoViewController
         let details:NSMutableArray = self.list?[indexPath.section]["details"] as NSMutableArray
         dest_view._title = self.list![indexPath.section]["title"] as? String
@@ -240,7 +244,6 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
         dest_view._website = details[indexPath.row]["url"] as? String
         dest_view._sbahn = details[indexPath.row]["station"] as? String
         dest_view._ubahn = details[indexPath.row]["station"] as? String
-        
         self.navigationController?.pushViewController(dest_view, animated: true)
         
         /*
@@ -252,7 +255,7 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
         [self.navigationController pushViewController:dest_View animated:YES];
         */
     }
-    
+
     /*
     //pragma mark - Header Open Or Close
     
@@ -275,6 +278,8 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
     }
     */
     
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
@@ -284,6 +289,23 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
         }
         
     }
-
+    
+    // MARK: UI设置
+    
+    override func viewWillAppear(animated: Bool) {
+        //定义变量
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.applicationCityInfoColor()]
+        
+        //改变颜色
+        self.navigationController?.navigationBar.titleTextAttributes = titleDict
+        self.navigationController?.navigationBar.tintColor = UIColor.applicationCityInfoColor()
+        self.navigationController?.view.backgroundColor = UIColor.whiteColor()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.view.backgroundColor = UIColor.whiteColor()
+        self.navigationController?.navigationBar.tintColor = nil
+    }
     
 }
