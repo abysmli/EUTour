@@ -18,7 +18,7 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
         super.viewDidLoad()
         
         let manager = AFHTTPRequestOperationManager()
-        let url = "http://37.187.71.48:3000/cityinfos/all_cityinfos"
+        let url = "http://192.168.1.120:3000/cityinfos/all_cityinfos"
         
         manager.GET(url, parameters: nil,
             success: {
