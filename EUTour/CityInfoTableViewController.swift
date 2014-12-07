@@ -18,13 +18,15 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
         super.viewDidLoad()
         
         let manager = AFHTTPRequestOperationManager()
-        let url = "http://192.168.1.120:3000/cityinfos/all_cityinfos"
+        
+        let url = "http://37.187.71.48:3000/cityinfos/all_cityinfos"
         
         manager.GET(url, parameters: nil,
             success: {
                 (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 println(responseObject as NSArray)
                 self.list = self.listGenerator(responseObject as NSArray)
+                println(self.list)
                 self.mTableView?.reloadData()
             }, failure: {
                 (operation: AFHTTPRequestOperation!, error: NSError!) in println("ERROR: " + error.localizedDescription)
@@ -67,8 +69,8 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
                     "station"          :   _row["station"] as String,
                     "longitude"        :   _row["longitude"] as String,
                     "latitude"         :   _row["latitude"] as String,
-                    "opentime1"       :   _row["opentime1"] as String,
-                    "opentime2"       :   _row["opentime2"] as String,
+                    "opentime1"        :   _row["opentime1"] as String,
+                    "opentime2"        :   _row["opentime2"] as String,
                     "address"          :   _row["details"] as String,
                     "email"            :   _row["email"] as String,
                     "phonenumber"      :   _row["tel"] as String,
@@ -228,7 +230,6 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
     
     func mTableView(mTable: TQMultistageTableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        
         let dest_view:CityInfoViewController = self.storyboard?.instantiateViewControllerWithIdentifier("CityInfoDetailsView") as CityInfoViewController
         let details:NSMutableArray = self.list?[indexPath.section]["details"] as NSMutableArray
         dest_view._title = self.list![indexPath.section]["title"] as? String
@@ -238,14 +239,13 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
         dest_view._opentime = details[indexPath.row]["opentime2"] as? String
         dest_view._latitude = (details[indexPath.row]["latitude"] as? NSString)!.doubleValue
         dest_view._longitude = (details[indexPath.row]["longitude"] as? NSString)!.doubleValue
-        dest_view._address = details[indexPath.row]["details"] as? String
+        dest_view._address = details[indexPath.row]["address"] as? String
         dest_view._email = details[indexPath.row]["email"] as? String
-        dest_view._phonenumber = details[indexPath.row]["tel"] as? String
-        dest_view._website = details[indexPath.row]["url"] as? String
+        dest_view._phonenumber = details[indexPath.row]["phonenumber"] as? String
+        dest_view._website = details[indexPath.row]["website"] as? String
         dest_view._sbahn = details[indexPath.row]["station"] as? String
         dest_view._ubahn = details[indexPath.row]["station"] as? String
         self.navigationController?.pushViewController(dest_view, animated: true)
-        
         /*
         CityInformation_DetailsViewController *dest_View = [self.storyboard instantiateViewControllerWithIdentifier:@"CityInformationDetailsViewController"];
         dest_View.mLocation = [[CLLocation alloc] initWithLatitude:[self.list[indexPath.section][@"details"][indexPath.row][@"latitude"] doubleValue] longitude:[self.list[indexPath.section][@"details"][indexPath.row][@"longitude"] doubleValue]];
