@@ -484,7 +484,7 @@
 					};
 					399DD6AB1998367100D14BD3 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = VXX7484L47;
+						DevelopmentTeam = 4YMW3G2T54;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;

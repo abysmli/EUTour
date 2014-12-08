@@ -10,6 +10,8 @@ import UIKit
 
 class RentTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, UIPopoverControllerDelegate {
     
+    var list:NSMutableArray? = NSMutableArray()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +21,7 @@ class RentTableViewController: UITableViewController, UITableViewDataSource, UIT
         var filterItem:UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "filter_icon"), style: .Plain, target: self, action: nil)
         var rightButtonItems:NSArray = [mapItem, filterItem]
         self.navigationItem.setRightBarButtonItems(rightButtonItems, animated: true)
+        self.getData()
         //filterItem.imageInsets = UIEdgeInsetsMake(0, 0, 0, -30)
     }
 
@@ -34,19 +37,48 @@ class RentTableViewController: UITableViewController, UITableViewDataSource, UIT
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 4
+        return self.list!.count
     }
 
     
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: RentListTableViewCell = tableView.dequeueReusableCellWithIdentifier("rentList", forIndexPath: indexPath) as RentListTableViewCell
-        cell.houseTypeLabel.text = "单间"
+        cell.houseTypeLabel.text = self.list?[indexPath.row]["room_type"] as? String
+        let price:Int? = self.list?[indexPath.row]["price"] as? Int
+        if ((price) != nil) {
+            cell.housePrice.text = String(price!)
+        }
         cell.houseImage.image = UIImage(named: "house1")
-        cell.housePrice.text = "300"
-        cell.houseTitle.text = "斯图Vahingen宿舍出租"
-        cell.houseDetails.text = "学生宿舍，在Uni Vahingen校区内，公用厨房卫生间，环境优美，交通便利，并有100兆带宽的高速网络"
+        cell.houseTitle.text = self.list?[indexPath.row]["title"] as? String
+        cell.houseDetails.text = self.list?[indexPath.row]["desc"] as? String
         cell.houseDistance.text = "2.1 km"
         //cell.setCell("WG", imageName: "")
+    
+        /*
+        var err: NSError?
+        let data:NSData? = self.list?[indexPath.row]["images"] as? NSData
+        var images_array = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSDictionary
+        if (err != nil) {
+            println("JSON Error \(err!.localizedDescription)")
+        }
+        
+        println(images_array)
+        
+        
+        
+        let test:String? = self.list?[indexPath.row]["images"] as? String
+        //println(test)
+        
+        let base64String:String? = nil
+        //println(base64String)
+        if (base64String != nil) {
+            let decodedData = NSData(base64EncodedString: base64String!, options: NSDataBase64DecodingOptions(rawValue: 0))
+            cell.houseImage.image = UIImage(data: decodedData!)
+        } else {
+            cell.houseImage.image = UIImage(named: "house1")
+        }
+        */
         
         return cell
     }
@@ -79,5 +111,19 @@ class RentTableViewController: UITableViewController, UITableViewDataSource, UIT
     
     func callFilterTableView() {
         
+    }
+    
+    func getData() {
+        let manager = AFHTTPRequestOperationManager()
+        let url = "http://192.168.1.120:3000/immovables/all_immovables"
+        manager.GET(url, parameters: nil,
+            success: {
+                (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                self.list = responseObject as? NSMutableArray
+                self.tableView.reloadData()
+            }, failure: {
+                (operation: AFHTTPRequestOperation!, error: NSError!) in println("ERROR: " + error.localizedDescription)
+        })
+
     }
 }
