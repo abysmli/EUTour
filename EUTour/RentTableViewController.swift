@@ -62,7 +62,7 @@ class RentTableViewController: UITableViewController, UITableViewDataSource, UIT
         if (err != nil) {
             println("JSON Error \(err!.localizedDescription)")
         }
-        
+        01
         println(images_array)
         
         
