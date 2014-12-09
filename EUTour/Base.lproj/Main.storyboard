@@ -807,8 +807,11 @@
                                                                     <constraint firstAttribute="height" constant="30" id="UOG-Jb-BKg"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="web address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCr-iv-ibE">
-                                                                <rect key="frame" x="46" y="7" width="77" height="16"/>
+                                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="web address" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCr-iv-ibE">
+                                                                <rect key="frame" x="46" y="7" width="192" height="16"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="192" id="5l9-JH-Fub"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -816,7 +819,8 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstItem="tCr-iv-ibE" firstAttribute="centerY" secondItem="UUk-Dg-ivj" secondAttribute="centerY" constant="-0.5" id="BSr-nt-cjJ"/>
+                                                            <constraint firstAttribute="trailing" secondItem="tCr-iv-ibE" secondAttribute="trailing" id="5Ex-du-iQC"/>
+                                                            <constraint firstItem="tCr-iv-ibE" firstAttribute="centerY" secondItem="UUk-Dg-ivj" secondAttribute="centerY" id="BSr-nt-cjJ"/>
                                                             <constraint firstItem="tCr-iv-ibE" firstAttribute="leading" secondItem="UUk-Dg-ivj" secondAttribute="trailing" constant="8" id="Kqi-FM-AE6"/>
                                                             <constraint firstAttribute="bottom" secondItem="UUk-Dg-ivj" secondAttribute="bottom" id="YRo-W4-cfS"/>
                                                             <constraint firstItem="UUk-Dg-ivj" firstAttribute="top" secondItem="MpB-Qa-658" secondAttribute="top" id="ZIz-q0-RKl"/>
@@ -841,88 +845,45 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" id="2Du-OJ-hjB"/>
                                             <constraint firstAttribute="bottom" secondItem="pFX-Ur-D5X" secondAttribute="bottom" constant="8" id="7ua-n5-2Qs"/>
                                             <constraint firstItem="IFb-7N-6zg" firstAttribute="leading" secondItem="D5q-us-Dj0" secondAttribute="leading" constant="13" id="9Jg-Aq-OGW"/>
                                             <constraint firstAttribute="trailing" secondItem="pFX-Ur-D5X" secondAttribute="trailing" constant="8" id="9dF-t3-ZmE"/>
                                             <constraint firstItem="pFX-Ur-D5X" firstAttribute="leading" secondItem="IFb-7N-6zg" secondAttribute="trailing" constant="13" id="Wd4-O3-oT8"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="biR-2f-DTM"/>
                                             <constraint firstItem="pFX-Ur-D5X" firstAttribute="top" secondItem="D5q-us-Dj0" secondAttribute="top" constant="8" id="eOu-UA-sqo"/>
                                             <constraint firstAttribute="centerY" secondItem="IFb-7N-6zg" secondAttribute="centerY" id="g4g-Z3-aH7"/>
                                         </constraints>
                                     </view>
                                     <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uTB-SP-6Jt">
-                                        <rect key="frame" x="0.0" y="386" width="320" height="74"/>
+                                        <rect key="frame" x="0.0" y="386" width="320" height="40"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7Y-g1-xKz">
-                                                <rect key="frame" x="74" y="8" width="238" height="58"/>
+                                                <rect key="frame" x="74" y="8" width="238" height="24"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yc5-Oi-t67">
-                                                        <rect key="frame" x="0.0" y="0.0" width="238" height="25"/>
-                                                        <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sbahn_logo" translatesAutoresizingMaskIntoConstraints="NO" id="cOM-UM-QLl">
-                                                                <rect key="frame" x="8" y="0.0" width="25" height="25"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="25" id="ObF-06-x25"/>
-                                                                    <constraint firstAttribute="width" constant="25" id="Yfl-hw-sHq"/>
-                                                                </constraints>
-                                                            </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sbahn station" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4e-Cq-sKk">
-                                                                <rect key="frame" x="41" y="4" width="82" height="16"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sbahn_logo" translatesAutoresizingMaskIntoConstraints="NO" id="ITz-bw-oKS">
+                                                        <rect key="frame" x="11" y="0.0" width="24" height="24"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="cOM-UM-QLl" secondAttribute="bottom" id="5nT-rT-VSW"/>
-                                                            <constraint firstItem="cOM-UM-QLl" firstAttribute="centerY" secondItem="K4e-Cq-sKk" secondAttribute="centerY" constant="0.5" id="9Ys-QU-GUv"/>
-                                                            <constraint firstItem="K4e-Cq-sKk" firstAttribute="leading" secondItem="cOM-UM-QLl" secondAttribute="trailing" constant="8" id="N3J-Lg-5M5"/>
-                                                            <constraint firstItem="cOM-UM-QLl" firstAttribute="top" secondItem="Yc5-Oi-t67" secondAttribute="top" id="Nra-U1-Sii"/>
-                                                            <constraint firstItem="cOM-UM-QLl" firstAttribute="leading" secondItem="Yc5-Oi-t67" secondAttribute="leading" constant="8" id="nvG-Tn-exa"/>
+                                                            <constraint firstAttribute="width" constant="24" id="EVT-vp-pUm"/>
+                                                            <constraint firstAttribute="height" constant="24" id="nxq-35-r9M"/>
                                                         </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpj-Eb-68D">
-                                                        <rect key="frame" x="0.0" y="33" width="238" height="25"/>
-                                                        <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ubahn_logo" translatesAutoresizingMaskIntoConstraints="NO" id="ebX-xI-JnQ">
-                                                                <rect key="frame" x="8" y="0.0" width="25" height="25"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="25" id="5ka-1f-2Mz"/>
-                                                                    <constraint firstAttribute="height" constant="25" id="H7G-gX-aXk"/>
-                                                                </constraints>
-                                                            </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ubahn station" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTH-Rv-xi8">
-                                                                <rect key="frame" x="41" y="4" width="82" height="16"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <constraints>
-                                                            <constraint firstItem="ebX-xI-JnQ" firstAttribute="top" secondItem="cpj-Eb-68D" secondAttribute="top" id="EV1-3i-Z8t"/>
-                                                            <constraint firstItem="CTH-Rv-xi8" firstAttribute="leading" secondItem="ebX-xI-JnQ" secondAttribute="trailing" constant="8" id="d8Z-YG-7f1"/>
-                                                            <constraint firstAttribute="bottom" secondItem="ebX-xI-JnQ" secondAttribute="bottom" id="dma-9Y-7JB"/>
-                                                            <constraint firstItem="ebX-xI-JnQ" firstAttribute="leading" secondItem="cpj-Eb-68D" secondAttribute="leading" constant="8" id="vxx-sN-zrN"/>
-                                                            <constraint firstItem="CTH-Rv-xi8" firstAttribute="centerY" secondItem="ebX-xI-JnQ" secondAttribute="centerY" constant="-0.5" id="xH4-W9-HtL"/>
-                                                        </constraints>
-                                                    </view>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="station" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKQ-I1-VRp">
+                                                        <rect key="frame" x="46" y="5" width="41" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstItem="Yc5-Oi-t67" firstAttribute="top" secondItem="v7Y-g1-xKz" secondAttribute="top" id="My4-XX-0vv"/>
-                                                    <constraint firstItem="Yc5-Oi-t67" firstAttribute="leading" secondItem="v7Y-g1-xKz" secondAttribute="leading" id="Th1-Uz-1CH"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Yc5-Oi-t67" secondAttribute="trailing" id="heP-xs-TVk"/>
-                                                    <constraint firstAttribute="bottom" secondItem="cpj-Eb-68D" secondAttribute="bottom" id="i7X-ND-U0B"/>
-                                                    <constraint firstItem="cpj-Eb-68D" firstAttribute="top" secondItem="Yc5-Oi-t67" secondAttribute="bottom" constant="8" id="lRU-sA-iBW"/>
-                                                    <constraint firstItem="cpj-Eb-68D" firstAttribute="leading" secondItem="v7Y-g1-xKz" secondAttribute="leading" id="pJ0-vM-kBm"/>
-                                                    <constraint firstAttribute="trailing" secondItem="cpj-Eb-68D" secondAttribute="trailing" id="wUV-Zi-Ims"/>
+                                                    <constraint firstItem="ITz-bw-oKS" firstAttribute="top" secondItem="v7Y-g1-xKz" secondAttribute="top" id="NkE-dH-Idl"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ITz-bw-oKS" secondAttribute="bottom" id="OSn-t2-yW2"/>
+                                                    <constraint firstItem="KKQ-I1-VRp" firstAttribute="centerY" secondItem="ITz-bw-oKS" secondAttribute="centerY" constant="0.5" id="XfF-Sg-ZFG"/>
+                                                    <constraint firstItem="ITz-bw-oKS" firstAttribute="leading" secondItem="v7Y-g1-xKz" secondAttribute="leading" constant="11" id="q3D-hE-037"/>
+                                                    <constraint firstItem="KKQ-I1-VRp" firstAttribute="leading" secondItem="ITz-bw-oKS" secondAttribute="trailing" constant="11" id="wdT-od-GS2"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="附近交通" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X10-h3-Sgh">
-                                                <rect key="frame" x="13" y="29" width="48" height="15"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="附近交通" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X10-h3-Sgh">
+                                                <rect key="frame" x="13" y="13" width="48" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -932,17 +893,14 @@
                                         <constraints>
                                             <constraint firstAttribute="centerY" secondItem="X10-h3-Sgh" secondAttribute="centerY" constant="0.5" id="2SG-zz-5a2"/>
                                             <constraint firstAttribute="trailing" secondItem="v7Y-g1-xKz" secondAttribute="trailing" constant="8" id="7OZ-KC-ErK"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" id="KPQ-xH-vZH"/>
-                                            <constraint firstItem="X10-h3-Sgh" firstAttribute="centerY" secondItem="v7Y-g1-xKz" secondAttribute="centerY" constant="-0.5" id="ZPu-60-Uw1"/>
                                             <constraint firstItem="X10-h3-Sgh" firstAttribute="leading" secondItem="uTB-SP-6Jt" secondAttribute="leading" constant="13" id="blP-rH-owh"/>
                                             <constraint firstAttribute="bottom" secondItem="v7Y-g1-xKz" secondAttribute="bottom" constant="8" id="eeu-tu-xgl"/>
                                             <constraint firstItem="v7Y-g1-xKz" firstAttribute="leading" secondItem="X10-h3-Sgh" secondAttribute="trailing" constant="13" id="or7-GN-del"/>
                                             <constraint firstItem="v7Y-g1-xKz" firstAttribute="top" secondItem="uTB-SP-6Jt" secondAttribute="top" constant="8" id="xLF-Qd-ZJa"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="ybh-9u-QFQ"/>
                                         </constraints>
                                     </view>
                                     <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WMd-q3-Bsg">
-                                        <rect key="frame" x="0.0" y="468" width="320" height="50"/>
+                                        <rect key="frame" x="0.0" y="434" width="320" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="详细地址" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WzP-as-Kf0">
                                                 <rect key="frame" x="13" y="17" width="48" height="15"/>
@@ -1013,20 +971,16 @@
                         <outlet property="BackgroundView" destination="Pu1-Ab-hxf" id="5IM-5u-S6U"/>
                         <outlet property="address" destination="9XW-MC-epP" id="ZgF-kP-1Yt"/>
                         <outlet property="address_title" destination="WzP-as-Kf0" id="bHO-fl-whz"/>
-                        <outlet property="address_view" destination="WMd-q3-Bsg" id="dKe-pw-3LY"/>
+                        <outlet property="bahnLogo" destination="ITz-bw-oKS" id="5lK-R3-2JF"/>
                         <outlet property="contact_title" destination="IFb-7N-6zg" id="aYo-cK-I9z"/>
-                        <outlet property="contact_view" destination="D5q-us-Dj0" id="CIN-XA-EJi"/>
                         <outlet property="email" destination="MKb-jq-Ih1" id="n5N-PO-oJN"/>
                         <outlet property="mapview" destination="lZ1-Gk-Zyb" id="yLw-Xd-2rx"/>
                         <outlet property="opendate" destination="xoS-2i-DRD" id="Lcl-NG-1A1"/>
                         <outlet property="opentime" destination="lFM-an-JGF" id="ZGD-s1-wDH"/>
                         <outlet property="opentime_title" destination="s0b-bW-0dT" id="F6b-zI-ERt"/>
-                        <outlet property="opentime_view" destination="oSG-uS-JUn" id="sxK-eg-jLE"/>
                         <outlet property="phonenumber" destination="Ewu-6Y-3BI" id="AT1-pS-tdr"/>
-                        <outlet property="sbahn" destination="K4e-Cq-sKk" id="Cur-XP-zNB"/>
+                        <outlet property="station" destination="KKQ-I1-VRp" id="UMq-e4-lCM"/>
                         <outlet property="traffic_title" destination="X10-h3-Sgh" id="iT2-m5-Qb6"/>
-                        <outlet property="traffic_view" destination="uTB-SP-6Jt" id="bHF-Z8-CdP"/>
-                        <outlet property="ubahn" destination="CTH-Rv-xi8" id="fFE-vk-7Ax"/>
                         <outlet property="website" destination="tCr-iv-ibE" id="Bfc-Ju-Y9f"/>
                     </connections>
                 </viewController>
@@ -1945,7 +1899,6 @@
         <image name="News" width="49" height="49"/>
         <image name="RentInfo" width="50" height="50"/>
         <image name="Sbahn_logo" width="43" height="43"/>
-        <image name="Ubahn_logo" width="45" height="45"/>
         <image name="UnionOfUniversities" width="48" height="48"/>
         <image name="bookmark-50" width="25" height="25"/>
         <image name="camera_button" width="132" height="132"/>

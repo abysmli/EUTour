@@ -26,16 +26,12 @@ class CityInfoViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var website: UILabel!
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var phonenumber: UILabel!
-    @IBOutlet weak var sbahn: UILabel!
-    @IBOutlet weak var ubahn: UILabel!
-    
+    @IBOutlet weak var station:UILabel!
+    @IBOutlet weak var bahnLogo:UIImageView!
+
     @IBOutlet weak var mapview: MKMapView!
     let locationManger:CLLocationManager = CLLocationManager()
-    //定义每个子项
-    @IBOutlet weak var opentime_view: UIView!
-    @IBOutlet weak var contact_view: UIView!
-    @IBOutlet weak var traffic_view: UIView!
-    @IBOutlet weak var address_view: UIView!
+    
     
     // MARK: 变量定义
     
@@ -51,6 +47,7 @@ class CityInfoViewController: UIViewController, CLLocationManagerDelegate {
     var _ubahn:String? = nil
     var _latitude:Double = 0.0
     var _longitude:Double = 0.0
+    var _bahnType:Int = 0
     
     // MARK: 主程序
     
@@ -76,9 +73,15 @@ class CityInfoViewController: UIViewController, CLLocationManagerDelegate {
         phonenumber.text = _phonenumber;
         email.text = _email;
         website.text = _website;
-        ubahn.text = _ubahn;
-        sbahn.text = _sbahn;
         address.text = _address;
+        
+        if _bahnType == 0 {
+            station.text = _ubahn
+            bahnLogo.image = UIImage(named: "Ubahn_logo")
+        } else {
+            station.text = _sbahn
+            bahnLogo.image = UIImage(named: "Sbahn_logo")
+        }
         
         //UI配置
         
