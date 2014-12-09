@@ -245,6 +245,7 @@ class CityInfoTableViewController: UIViewController, TQTableViewDataSource, TQTa
         dest_view._website = details[indexPath.row]["website"] as? String
         dest_view._sbahn = details[indexPath.row]["station"] as? String
         dest_view._ubahn = details[indexPath.row]["station"] as? String
+        dest_view._bahnType = details[indexPath.row]["station_type"] as Int
         self.navigationController?.pushViewController(dest_view, animated: true)
         /*
         CityInformation_DetailsViewController *dest_View = [self.storyboard instantiateViewControllerWithIdentifier:@"CityInformationDetailsViewController"];
